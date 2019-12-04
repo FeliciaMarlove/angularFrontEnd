@@ -11,5 +11,8 @@
 
 <button mat-flat-button (click)="getAllCategories()" *ngIf="!inactiveChecker">Voir tout</button>
 <button mat-flat-button (click)="getCategoriesActives()" *ngIf="inactiveChecker">Voir les catégories actives</button>
+<button mat-fab (click)="getAllCategories()" *ngIf="inactiveChecker">Refresh</button>
+<button mat-fab (click)="getCategoriesActives()" *ngIf="!inactiveChecker">Refresh</button>
+<br>
 
 
