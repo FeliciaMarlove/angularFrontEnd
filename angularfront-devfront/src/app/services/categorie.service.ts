@@ -10,6 +10,8 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class CategorieService {
+  public selection;
+  public idCategorie;
 
   constructor(private http: HttpClient) { }
   listActiveCategories() {
@@ -19,8 +21,22 @@ export class CategorieService {
     return this.http.get(URI + 'all');
   }
 
-  // ???????? post
-  setActiveCategorie(categorie) {
-    return this.http.post(URI + 'activer/' + categorie.idCategorie, JSON.stringify(categorie), httpOptions);
+  //en get :
+  setActiveCategorie(categorieId) {
+    console.log(URI + 'activer/' + categorieId);
+    return this.http.get(URI + 'activer/' + categorieId).subscribe();
+  }
+
+  //en post :
+  setInactiveCategorie(categorieId) {
+    console.log(URI + 'desactiver/' + categorieId);
+    return this.http.post(URI + 'desactiver/' + categorieId, httpOptions).subscribe();
+  }
+
+  select(categorie) {
+    this.selection = categorie;
+    this.idCategorie = categorie.idCategorie;
+    console.log(this.selection);
+    console.log(this.idCategorie);
   }
 }

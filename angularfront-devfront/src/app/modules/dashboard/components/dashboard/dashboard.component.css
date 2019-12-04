@@ -1,5 +1,6 @@
 .container {
   position: fixed;
   left: 302px;
-  top: 300px;
+  top: 200px;
+  overflow: scroll;
 }

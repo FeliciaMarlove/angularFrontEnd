@@ -2,11 +2,12 @@
 
 <div class="toScrollListes">
   <ul>
-    <li *ngFor="let categorie of categories">{{ categorie.idCategorie}} - {{ categorie.nomCategorie }} - {{ categorie.descCategorie }} <bdi *ngIf="inactiveChecker">- {{ true == categorie.activeCategorie ? 'Active' : 'Inactive' }}</bdi>
+    <li *ngFor="let categorie of categories" (click)="categorieService.select(categorie)">{{ categorie.idCategorie}} - {{ categorie.nomCategorie }} - {{ categorie.descCategorie }} <bdi *ngIf="inactiveChecker">- {{ true == categorie.activeCategorie ? 'Active' : 'Inactive' }}</bdi>
     </li>
   </ul>
 </div>
 
+<p *ngIf="categorieService.selection != null">Catégorie sélectionnée : {{ categorieService.selection.idCategorie }} - {{ categorieService.selection.nomCategorie }}</p>
 
 <button mat-flat-button (click)="getAllCategories()" *ngIf="!inactiveChecker">Voir tout</button>
 <button mat-flat-button (click)="getCategoriesActives()" *ngIf="inactiveChecker">Voir les catégories actives</button>
