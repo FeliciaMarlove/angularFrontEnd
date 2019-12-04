@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {CategorieService} from "../../../../../services/categorie.service";
-import {ActivatedRoute, Router} from "@angular/router";
+import {CategorieModel} from "../../../../../models/categorie-model";
 
 @Component({
   selector: 'app-modif-categories',
@@ -9,11 +9,9 @@ import {ActivatedRoute, Router} from "@angular/router";
 })
 export class ModifCategoriesComponent implements OnInit {
 
-  constructor(private categorieService: CategorieService,  private route: ActivatedRoute, private router: Router) { }
+  constructor(private categorieService: CategorieService) { }
 
   ngOnInit() {
   }
-
-
 
 }

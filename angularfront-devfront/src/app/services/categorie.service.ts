@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {CategorieModel} from "../models/categorie-model";
 
 const URI = 'http://localhost:8080/api/categories/'; //<endpoint
 const httpOptions = {
@@ -12,6 +13,7 @@ const httpOptions = {
 export class CategorieService {
   public selection;
   public idCategorie;
+  public cat: CategorieModel;
 
   constructor(private http: HttpClient) { }
   listActiveCategories() {
@@ -38,5 +40,9 @@ export class CategorieService {
     this.idCategorie = categorie.idCategorie;
     console.log(this.selection);
     console.log(this.idCategorie);
+  }
+
+  createCategorie(categorie) {
+    return this.http.post(URI + 'creer', JSON.stringify(categorie), httpOptions);
   }
 }

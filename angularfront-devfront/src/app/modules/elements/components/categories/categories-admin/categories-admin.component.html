@@ -1,7 +1,10 @@
-<p>categories-admin component</p>
 <p>Nouvelle catégorie :</p>
-<div>
-  TO DO
-</div>
-<app-modif-categories></app-modif-categories>
+<form (ngSubmit)="ajouterCategorie(); catform.reset();" #catform="ngForm">
+  <input type="text" name="nom" [(ngModel)]="nomCat" placeholder="Nom catégorie" required>
+  <input type="text" name="desc" [(ngModel)]="descCat" placeholder="Description catégorie" required>
+  <button mat-fab>Ajouter</button>
+</form>
+<br>
 <app-liste-categories></app-liste-categories>
+<app-modif-categories></app-modif-categories>
+
