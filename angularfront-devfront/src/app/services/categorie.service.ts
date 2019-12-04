@@ -13,7 +13,7 @@ const httpOptions = {
 export class CategorieService {
   public selection;
   public idCategorie;
-  public cat: CategorieModel;
+  public cat;
 
   constructor(private http: HttpClient) { }
   listActiveCategories() {
@@ -44,5 +44,10 @@ export class CategorieService {
 
   createCategorie(categorie) {
     return this.http.post(URI + 'creer', JSON.stringify(categorie), httpOptions);
+  }
+
+  updateCategorie(idCategorie, categorie) {
+    console.log(JSON.stringify(categorie));
+    return this.http.post(URI + '/update/' + idCategorie, JSON.stringify(categorie), httpOptions);
   }
 }

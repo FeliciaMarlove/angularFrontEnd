@@ -24,6 +24,4 @@ private descCat;
     this.cat.descCategorie = this.descCat;
     this.categoriesService.createCategorie(this.cat).subscribe();
   }
-
-
 }
