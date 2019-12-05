@@ -3,7 +3,7 @@
 <div class="toScrollListes">
   <ul>
     <li *ngFor="let parcours of parcourss" (click)="parcoursService.select(parcours)">
-      {{ parcours.idParcours}} - {{ parcours.nomParcours }} - {{ parcours.prix }}€
+      {{ parcours.idParcours}} - {{ parcours.nomParcours }} - {{ parcours.prix }}€ - {{ true == parcours.activeParcours ? 'Actif' : 'Inactif'}}
     </li>
   </ul>
 </div>

@@ -26,7 +26,7 @@ export class ParcoursService {
     return this.http.post(URI + 'activer/' + parcoursId, httpOptions).subscribe();
   }
   setInactiveParcours(parcoursId) {
-    return this.http.post(URI + 'desactiver/' + parcoursId, httpOptions);
+    return this.http.post(URI + 'desactiver/' + parcoursId, httpOptions).subscribe();
   }
   select(parcours) {
     this.selection = parcours;
