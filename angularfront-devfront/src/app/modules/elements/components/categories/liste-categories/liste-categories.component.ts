@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {CategorieService} from '../../../../../services/categorie.service';
-import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-liste-categories',
@@ -24,7 +23,7 @@ export class ListeCategoriesComponent implements OnInit {
       (data: {}) => {
         this.categories = data;
       }
-    )
+    );
   }
 
   getAllCategories() {
@@ -32,10 +31,9 @@ export class ListeCategoriesComponent implements OnInit {
     this.categories = [];
     this.categorieService.listAllCategories().subscribe(
       (data: {}) => {
-        //console.log(data);
+        // console.log(data);
         this.categories = data;
       }
-    )
+    );
   }
-
 }

@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {CategorieModel} from "../models/categorie-model";
 
-const URI = 'http://localhost:8080/api/categories/'; //<endpoint
+const URI = 'http://localhost:8080/api/categories/'; // <endpoint
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type' : 'application/json'})
 };
@@ -13,7 +12,6 @@ const httpOptions = {
 export class CategorieService {
   public selection;
   public idCategorie;
-  public cat;
 
   constructor(private http: HttpClient) { }
   listActiveCategories() {
@@ -23,13 +21,13 @@ export class CategorieService {
     return this.http.get(URI + 'all');
   }
 
-  //en get :
+  // en get :
   setActiveCategorie(categorieId) {
     console.log(URI + 'activer/' + categorieId);
     return this.http.get(URI + 'activer/' + categorieId).subscribe();
   }
 
-  //en post :
+  // en post :
   setInactiveCategorie(categorieId) {
     console.log(URI + 'desactiver/' + categorieId);
     return this.http.post(URI + 'desactiver/' + categorieId, httpOptions).subscribe();

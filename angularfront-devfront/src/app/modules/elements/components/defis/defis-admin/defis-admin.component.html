@@ -1,5 +1,13 @@
-<p>defis-admin component</p>
-<app-modif-defis></app-modif-defis>
+<p>Nouveau défi :</p>
+<form (ngSubmit)="ajouterDefi(); defform.reset();" #defform="ngForm">
+<input type="text" name="nomDefi" [(ngModel)]="nomDef" placeholder="Nom défi" required>
+<input type="text" name="descDefi" [(ngModel)]="descDef" placeholder="Description défi" required>
+<input type="text" name="infoDefi" [(ngModel)]="infoDef" placeholder="Infobulle défi" required>
+<input type="text" name="idCatDefi" [(ngModel)]="idCat" placeholder="Numéro de catégorie" required>
+<button mat-fab>Ajouter</button>
+</form>
+<br>
 <app-liste-defis></app-liste-defis>
+<app-modif-defis></app-modif-defis>
 <app-liste-categories></app-liste-categories>
 

@@ -1,1 +1,12 @@
-<p>modif-defis works!</p>
+<button mat-raised-button (click)="defiService.setActiveDefi(defiService.idDefi)">Activer</button>
+<button mat-raised-button (click)="defiService.setInactiveDefi(defiService.idDefi)">Désactiver</button>
+<br>
+<p>Modifier défi :</p>
+<p *ngIf="!defiService.selection">Sélectionnez un défi pour le modifier</p>
+<form (ngSubmit)="mettreAJourDefi(); defform.reset();" #defform="ngForm" *ngIf="defiService.selection">
+  <input type="text" name="nomDef" [(ngModel)]="nomDef" placeholder="Nom défi" required>
+  <input type="text" name="descDef" [(ngModel)]="descDef" placeholder="Description défi" required>
+  <input type="text" name="infoDef" [(ngModel)]="infDef" placeholder="Infobulle défi" required>
+  <input type="text" name="idCat" [(ngModel)]="catNum" placeholder="Id catégorie" required>
+</form>
+<button mat-raised-button *ngIf="defiService.selection" (click)="mettreAJourDefi()">Mettre à jour</button>

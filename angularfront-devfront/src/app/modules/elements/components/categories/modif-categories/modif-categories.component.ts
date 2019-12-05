@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {CategorieService} from "../../../../../services/categorie.service";
-import {CategorieModel} from "../../../../../models/categorie-model";
+import {CategorieService} from '../../../../../services/categorie.service';
+import {CategorieModel} from '../../../../../models/categorie-model';
 
 @Component({
   selector: 'app-modif-categories',
@@ -22,5 +22,6 @@ export class ModifCategoriesComponent implements OnInit {
     this.cat.nomCategorie = this.nomCat;
     this.cat.descCategorie = this.descCat;
     this.categorieService.updateCategorie(this.categorieService.idCategorie, this.cat).subscribe();
+    this.categorieService.selection = null;
   }
 }

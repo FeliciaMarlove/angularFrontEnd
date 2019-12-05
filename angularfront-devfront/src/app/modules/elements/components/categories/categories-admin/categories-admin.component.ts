@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {CategorieService} from "../../../../../services/categorie.service";
-import {CategorieModel} from "../../../../../models/categorie-model";
-import {NgForm} from "@angular/forms";
+import {CategorieService} from '../../../../../services/categorie.service';
+import {CategorieModel} from '../../../../../models/categorie-model';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-categories-admin',
