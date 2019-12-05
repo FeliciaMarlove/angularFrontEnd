@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {DefiModel} from '../../../../../models/defi-model';
 import {DefisService} from '../../../../../services/defis.service';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-modif-defis',

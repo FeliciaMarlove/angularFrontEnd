@@ -1,1 +1,14 @@
-<p>liste-parcours works!</p>
+<p>Parcours :</p>
+
+<div class="toScrollListes">
+  <ul>
+    <li *ngFor="let parcours of parcourss" (click)="parcoursService.select(parcours)">
+      {{ parcours.idParcours}} - {{ parcours.nomParcours }} - {{ parcours.prix }}€
+    </li>
+  </ul>
+</div>
+
+<p *ngIf="parcoursService.selection != null">Parcours sélectionné : {{ parcoursService.selection.idParcours }} {{ parcoursService.selection.nomParcours }} {{ parcoursService.selection.prix }}€ (catégorie {{ parcoursService.selection.categorie.idCategorie }} {{ parcoursService.selection.categorie.nomCategorie }}) </p>
+
+<button mat-fab (click)="getAllParcours()">Refresh</button>
+<br>

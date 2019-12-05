@@ -1,1 +1,12 @@
-<p>modif-parcours works!</p>
+<button mat-raised-button (click)="parcoursService.setActiveParcours(parcoursService.parcoursId)">Activer</button>
+<button mat-raised-button (click)="parcoursService.setInactiveParcours(parcoursService.parcoursId)">Désactiver</button>
+<br>
+<p>Modifier parcours :</p>
+<p *ngIf="!parcoursService.selection">Sélectionnez un parcours pour le modifier</p>
+<form (ngSubmit)="mettreAJourParcours(); parcform.reset();" #parcform="ngForm" *ngIf="parcoursService.selection">
+  <input type="text" name="nom" [(ngModel)]="nomParc" placeholder="Nom parcours" required>
+  <input type="text" name="desc" [(ngModel)]="descParc" placeholder="Description parcours" required>
+  <input type="text" name="prix" [(ngModel)]="prixParc" placeholder="Prix" required>
+  <input type="text" name="cat" [(ngModel)]="idCatParc" placeholder="Catégorie (id)" required>
+</form>
+<button mat-raised-button *ngIf="parcoursService.selection" (click)="mettreAJourParcours()">Mettre à jour</button>

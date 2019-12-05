@@ -2,7 +2,7 @@
 
 <div class="toScrollListes">
   <ul>
-    <li *ngFor="let defi of defis" (click)="defiService.select(defi)">
+    <li *ngFor="let defi of defis" (click)="defiService.select(defi);">
       {{ defi.idDefi }} - {{ defi.nomDefi }} - {{ defi.descDefi }} <bdi *ngIf="inactiveChecker">- {{ true == defi.activeDefi ? 'Actif' : 'Inactif' }}</bdi>
     </li>
   </ul>

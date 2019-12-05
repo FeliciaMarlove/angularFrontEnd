@@ -31,7 +31,6 @@ export class ListeCategoriesComponent implements OnInit {
     this.categories = [];
     this.categorieService.listAllCategories().subscribe(
       (data: {}) => {
-        // console.log(data);
         this.categories = data;
       }
     );

@@ -41,6 +41,6 @@ export class DefisService {
   }
 
   updateDefi(idDefi, defi) {
-    return this.http.post(URI + '/update/' + idDefi, JSON.stringify(defi), httpOptions);
+    return this.http.post(URI + 'update/' + idDefi, JSON.stringify(defi), httpOptions);
   }
 }

@@ -1,4 +1,12 @@
-<p>parcours-admin component</p>
-<app-modif-parcours></app-modif-parcours>
+<p>Nouveau parcours :</p>
+<form (ngSubmit)="ajouterParcours(); parcform.reset();" #parcform="ngForm">
+<input type="text" name="nom" [(ngModel)]="nomParc" placeholder="Nom parcours" required>
+<input type="text" name="desc" [(ngModel)]="descParc" placeholder="Description parcours" required>
+<input type="text" name="prix" [(ngModel)]="prix" placeholder="Prix" required>
+<input type="text" name="idcat" [(ngModel)]="idCat" placeholder="Catégorie (id)" required>
+<button mat-fab>Ajouter</button>
+</form>
+<br>
 <app-liste-parcours></app-liste-parcours>
+<app-modif-parcours></app-modif-parcours>
 <app-liste-categories></app-liste-categories>
