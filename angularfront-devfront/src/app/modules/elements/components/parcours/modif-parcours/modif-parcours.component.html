@@ -8,5 +8,5 @@
   <input type="text" name="desc" [(ngModel)]="descParc" placeholder="Description parcours" required>
   <input type="text" name="prix" [(ngModel)]="prixParc" placeholder="Prix" required>
   <input type="text" name="cat" [(ngModel)]="idCatParc" placeholder="Catégorie (id)" required>
+  <button mat-raised-button *ngIf="parcoursService.selection">Mettre à jour</button>
 </form>
-<button mat-raised-button *ngIf="parcoursService.selection" (click)="mettreAJourParcours()">Mettre à jour</button>

@@ -6,5 +6,6 @@
 <form (ngSubmit)="mettreAJourCategorie(); catform.reset();" #catform="ngForm" *ngIf="categorieService.selection">
   <input type="text" name="nom" [(ngModel)]="nomCat" placeholder="Nom catégorie" required>
   <input type="text" name="desc" [(ngModel)]="descCat" placeholder="Description catégorie" required>
+  <button mat-raised-button *ngIf="categorieService.selection" >Mettre à jour</button>
 </form>
-<button mat-raised-button *ngIf="categorieService.selection" (click)="mettreAJourCategorie()">Mettre à jour</button>
+

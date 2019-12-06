@@ -8,5 +8,6 @@
   <input type="text" name="descDef" [(ngModel)]="descDef" placeholder="Description défi" required>
   <input type="text" name="infoDef" [(ngModel)]="infDef" placeholder="Infobulle défi" required>
   <input type="text" name="idCat" [(ngModel)]="catNum" placeholder="Id catégorie" required>
+  <button mat-raised-button *ngIf="defiService.selection" >Mettre à jour</button>
 </form>
-<button mat-raised-button *ngIf="defiService.selection" (click)="mettreAJourDefi()">Mettre à jour</button>
+

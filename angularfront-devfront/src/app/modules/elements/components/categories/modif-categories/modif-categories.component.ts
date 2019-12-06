@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, HostBinding, Input, OnInit} from '@angular/core';
 import {CategorieService} from '../../../../../services/categorie.service';
 import {CategorieModel} from '../../../../../models/categorie-model';
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-modif-categories',
@@ -8,13 +9,17 @@ import {CategorieModel} from '../../../../../models/categorie-model';
   styleUrls: ['./modif-categories.component.css']
 })
 export class ModifCategoriesComponent implements OnInit {
-  private cat: CategorieModel;
-  private nomCat;
-  private descCat;
+  @Input() private cat: CategorieModel;
+  @Input() private nomCat;
+  @Input() private descCat;
+  @HostBinding('class.selected')
+  selected = null;
 
   constructor(private categorieService: CategorieService) { }
 
   ngOnInit() {
+    this.categorieService.change.subscribe(select => {this.cat = select; this.nomCat = select.nomCategorie; this.descCat = select.descCategorie});
+    //this.categorieService.change.subscribe(select => this.descCat = select.descCategorie);
   }
 
   mettreAJourCategorie() {
@@ -24,4 +29,5 @@ export class ModifCategoriesComponent implements OnInit {
     this.categorieService.updateCategorie(this.categorieService.idCategorie, this.cat).subscribe();
     this.categorieService.selection = null;
   }
+
 }

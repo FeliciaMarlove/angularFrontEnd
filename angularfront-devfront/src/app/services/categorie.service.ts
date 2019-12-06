@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {EventEmitter, HostListener, Injectable, Output} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 const URI = 'http://localhost:8080/api/categories/'; // <endpoint
@@ -12,6 +12,8 @@ const httpOptions = {
 export class CategorieService {
   public selection;
   public idCategorie;
+  public numanumanumaye;
+  @Output() change: EventEmitter<any> = new EventEmitter();
 
   constructor(private http: HttpClient) { }
   listActiveCategories() {
@@ -26,6 +28,14 @@ export class CategorieService {
     return this.http.get(URI + 'activer/' + categorieId).subscribe();
   }
 
+  createCategorie(categorie) {
+    return this.http.post(URI + 'creer', JSON.stringify(categorie), httpOptions);
+  }
+
+  updateCategorie(idCategorie, categorie) {
+    return this.http.post(URI + 'update/' + idCategorie, JSON.stringify(categorie), httpOptions);
+  }
+
   // en post :
   setInactiveCategorie(categorieId) {
     return this.http.post(URI + 'desactiver/' + categorieId, httpOptions).subscribe();
@@ -34,13 +44,9 @@ export class CategorieService {
   select(categorie) {
     this.selection = categorie;
     this.idCategorie = categorie.idCategorie;
+    this.numanumanumaye = categorie.nomCategorie;
+    this.change.emit(this.selection);
   }
 
-  createCategorie(categorie) {
-    return this.http.post(URI + 'creer', JSON.stringify(categorie), httpOptions);
-  }
 
-  updateCategorie(idCategorie, categorie) {
-    return this.http.post(URI + '/update/' + idCategorie, JSON.stringify(categorie), httpOptions);
-  }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 import {CategorieService} from '../../../../../services/categorie.service';
 
 @Component({
@@ -34,5 +34,10 @@ export class ListeCategoriesComponent implements OnInit {
         this.categories = data;
       }
     );
+  }
+
+  @HostListener('speak')
+  speak() {
+    this.categorieService.select(this.categorieService.selection);
   }
 }
