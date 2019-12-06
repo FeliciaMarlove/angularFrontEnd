@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {DefisService} from '../../../../../services/defis.service';
+import {CategorieService} from "../../../../../services/categorie.service";
 
 @Component({
   selector: 'app-liste-defis',
@@ -9,7 +10,6 @@ import {DefisService} from '../../../../../services/defis.service';
 export class ListeDefisComponent implements OnInit {
   public defis;
   private inactiveChecker;
-  public idCat;
 
   constructor(private defiService: DefisService) { }
 

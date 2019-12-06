@@ -5,11 +5,14 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/angularfront-devfront/src/app/modules/elements/components/categories/liste-categories/liste-categories.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/angularfront-devfront/src/app/modules/elements/components/categories/liste-categories/liste-categories.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/angularfront-devfront/src/app/modules/elements/components/categories/liste-categories/liste-categories.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/angularfront-devfront/src/app/modules/elements/components/categories/liste-categories/liste-categories.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/angularfront-devfront/src/app/modules/elements/components/categories/modif-categories/modif-categories.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/angularfront-devfront/src/app/modules/elements/components/categories/modif-categories/modif-categories.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/angularfront-devfront/src/app/modules/elements/components/categories/modif-categories/modif-categories.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/angularfront-devfront/src/app/modules/elements/components/categories/modif-categories/modif-categories.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/angularfront-devfront/src/app/modules/elements/components/defis/modif-defis/modif-defis.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/angularfront-devfront/src/app/modules/elements/components/defis/modif-defis/modif-defis.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/angularfront-devfront/src/app/modules/elements/components/parcours/modif-parcours/modif-parcours.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/angularfront-devfront/src/app/modules/elements/components/parcours/modif-parcours/modif-parcours.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularfront-devfront/src/app/modules/elements/components/defis/liste-defis/liste-defis.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/angularfront-devfront/src/app/modules/elements/components/defis/liste-defis/liste-defis.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularfront-devfront/src/app/modules/elements/components/defis/liste-defis/liste-defis.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/angularfront-devfront/src/app/modules/elements/components/defis/liste-defis/liste-defis.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularfront-devfront/src/app/modules/elements/components/defis/modif-defis/modif-defis.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/angularfront-devfront/src/app/modules/elements/components/defis/modif-defis/modif-defis.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularfront-devfront/src/app/modules/elements/components/parcours/liste-parcours/liste-parcours.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/angularfront-devfront/src/app/modules/elements/components/parcours/liste-parcours/liste-parcours.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/angularfront-devfront/src/app/services/categorie.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/angularfront-devfront/src/app/services/categorie.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularfront-devfront/src/app/services/defis.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/angularfront-devfront/src/app/services/defis.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularfront-devfront/src/app/services/parcours.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/angularfront-devfront/src/app/services/parcours.service.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -95,7 +98,7 @@
       <workItem from="1575394720501" duration="13000" />
       <workItem from="1575411608829" duration="3303000" />
       <workItem from="1575445440007" duration="22970000" />
-      <workItem from="1575619804164" duration="8697000" />
+      <workItem from="1575619804164" duration="18856000" />
     </task>
     <servers />
   </component>

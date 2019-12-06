@@ -1,6 +1,7 @@
-import { Injectable } from '@angular/core';
+import {EventEmitter, Injectable, Output} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {DefiModel} from '../models/defi-model';
+import {ParcoursModel} from "../models/parcours-model";
 
 const URI = 'http://localhost:8080/api/parcours/';
 const httpOptions = {
@@ -14,6 +15,7 @@ export class ParcoursService {
   public selection;
   public parcoursId: number;
   public defi: DefiModel;
+  @Output() change: EventEmitter<ParcoursModel> = new EventEmitter();
 
   constructor(private http: HttpClient) { }
   listAllParcours() {
@@ -31,6 +33,7 @@ export class ParcoursService {
   select(parcours) {
     this.selection = parcours;
     this.parcoursId = parcours.idParcours;
+    this.change.emit(this.selection);
   }
   createParcours(parcours) {
     return this.http.post(URI + 'creer', JSON.stringify(parcours), httpOptions);

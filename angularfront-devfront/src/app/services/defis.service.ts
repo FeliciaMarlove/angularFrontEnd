@@ -1,5 +1,6 @@
-import { Injectable } from '@angular/core';
+import {EventEmitter, Injectable, Output} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {DefiModel} from "../models/defi-model";
 
 const URI = 'http://localhost:8080/api/defis/';
 const httpOptions = {
@@ -10,8 +11,10 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class DefisService {
-  public selection;
+  public selection: DefiModel;
   public idDefi;
+  public idCat;
+  @Output() change: EventEmitter<DefiModel> = new EventEmitter();
 
   constructor(private http: HttpClient) { }
   listActiveDefis() {
@@ -31,9 +34,15 @@ export class DefisService {
       httpOptions).subscribe();
   }
 
+  getIdCategorie(idDefi) {
+    return this.http.get(URI + 'getcat/' + idDefi);
+    //RETOURNE UN OBSERVABLE BC -> HTTP !
+  }
+
   select(defi) {
     this.selection = defi;
     this.idDefi = defi.idDefi;
+    this.change.emit(this.selection);
   }
 
   createDefi(defi) {

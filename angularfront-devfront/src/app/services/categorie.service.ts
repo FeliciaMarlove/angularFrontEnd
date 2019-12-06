@@ -1,5 +1,6 @@
 import {EventEmitter, HostListener, Injectable, Output} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {CategorieModel} from "../models/categorie-model";
 
 const URI = 'http://localhost:8080/api/categories/'; // <endpoint
 const httpOptions = {
@@ -12,8 +13,7 @@ const httpOptions = {
 export class CategorieService {
   public selection;
   public idCategorie;
-  public numanumanumaye;
-  @Output() change: EventEmitter<any> = new EventEmitter();
+  @Output() change: EventEmitter<CategorieModel> = new EventEmitter();
 
   constructor(private http: HttpClient) { }
   listActiveCategories() {
@@ -44,9 +44,6 @@ export class CategorieService {
   select(categorie) {
     this.selection = categorie;
     this.idCategorie = categorie.idCategorie;
-    this.numanumanumaye = categorie.nomCategorie;
     this.change.emit(this.selection);
   }
-
-
 }

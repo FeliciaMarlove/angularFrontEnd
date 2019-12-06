@@ -3,12 +3,12 @@
 <div class="toScrollListes">
   <ul>
     <li *ngFor="let parcours of parcourss" (click)="parcoursService.select(parcours)">
-      {{ parcours.idParcours}} - {{ parcours.nomParcours }} - {{ parcours.prix }}€ - {{ true == parcours.activeParcours ? 'Actif' : 'Inactif'}}
+      {{ parcours.idParcours}} - {{ parcours.nomParcours }} - {{ true == parcours.activeParcours ? 'Actif' : 'Inactif'}}
     </li>
   </ul>
 </div>
 
-<p *ngIf="parcoursService.selection != null">Parcours sélectionné : {{ parcoursService.selection.idParcours }} {{ parcoursService.selection.nomParcours }} {{ parcoursService.selection.prix }}€ (catégorie {{ parcoursService.selection.categorie.idCategorie }} {{ parcoursService.selection.categorie.nomCategorie }}) </p>
+<p *ngIf="parcoursService.selection != null"><u>Parcours sélectionné :</u><br> Id : {{ parcoursService.selection.idParcours }} | nom : {{ parcoursService.selection.nomParcours }} | description : {{ parcoursService.selection.descParcours}} | prix : {{ parcoursService.selection.prix }}€ <br> (catégorie {{ parcoursService.selection.categorie.idCategorie }} {{ parcoursService.selection.categorie.nomCategorie }}) </p>
 
 <button mat-fab (click)="getAllParcours()">Refresh</button>
 <br>

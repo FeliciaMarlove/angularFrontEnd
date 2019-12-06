@@ -36,8 +36,5 @@ export class ListeCategoriesComponent implements OnInit {
     );
   }
 
-  @HostListener('speak')
-  speak() {
-    this.categorieService.select(this.categorieService.selection);
-  }
+
 }

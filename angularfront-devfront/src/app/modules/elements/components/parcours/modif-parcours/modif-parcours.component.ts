@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ParcoursModel} from '../../../../../models/parcours-model';
 import {ParcoursService} from '../../../../../services/parcours.service';
 
@@ -8,15 +8,16 @@ import {ParcoursService} from '../../../../../services/parcours.service';
   styleUrls: ['./modif-parcours.component.css']
 })
 export class ModifParcoursComponent implements OnInit {
-  private parc: ParcoursModel;
-  private nomParc;
-  private descParc;
-  private prixParc: number;
-  private idCatParc: number;
+  @Input() private parc: ParcoursModel;
+  @Input() private nomParc;
+  @Input() private descParc;
+  @Input() private prixParc: number;
+  @Input() private idCatParc: number;
 
   constructor(private parcoursService: ParcoursService) { }
 
   ngOnInit() {
+    this.parcoursService.change.subscribe(select => {this.parc = select; this.nomParc = select.nomParcours; this.descParc = select.descParcours; this.prixParc = select.prix;})
   }
   mettreAJourParcours() {
     this.parc = new ParcoursModel();

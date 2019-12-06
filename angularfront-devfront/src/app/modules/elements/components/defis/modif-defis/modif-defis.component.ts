@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, HostBinding, Input, OnInit} from '@angular/core';
 import {DefiModel} from '../../../../../models/defi-model';
 import {DefisService} from '../../../../../services/defis.service';
-import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-modif-defis',
@@ -9,15 +8,16 @@ import {NgForm} from '@angular/forms';
   styleUrls: ['./modif-defis.component.css']
 })
 export class ModifDefisComponent implements OnInit {
-  private def: DefiModel;
-  private nomDef;
-  private descDef;
-  private infDef;
-  private catNum;
+  @Input() private def: DefiModel;
+  @Input() private nomDef;
+  @Input() private descDef;
+  @Input() private infDef;
+  @Input() private catNum;
 
   constructor(private defiService: DefisService) { }
 
   ngOnInit() {
+    this.defiService.change.subscribe(select => {this.def = select; this.nomDef = select.nomDefi; this.descDef = select.descDefi; this.infDef = select.infobulleDefi;});
   }
 
   mettreAJourDefi() {
