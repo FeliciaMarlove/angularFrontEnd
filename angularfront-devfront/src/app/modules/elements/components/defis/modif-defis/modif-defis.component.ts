@@ -1,18 +1,24 @@
-import {Component, HostBinding, Input, OnInit} from '@angular/core';
+import {AfterViewInit, Component, HostBinding, Input, OnChanges, OnInit} from '@angular/core';
 import {DefiModel} from '../../../../../models/defi-model';
 import {DefisService} from '../../../../../services/defis.service';
+import {async} from "@angular/core/testing";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-modif-defis',
   templateUrl: './modif-defis.component.html',
   styleUrls: ['./modif-defis.component.css']
 })
-export class ModifDefisComponent implements OnInit {
+export class ModifDefisComponent implements OnInit, OnChanges {
+    ngOnChanges(changes: import("@angular/core").SimpleChanges): void {
+        console.log(changes);
+    }
+
   @Input() private def: DefiModel;
   @Input() private nomDef;
   @Input() private descDef;
   @Input() private infDef;
-  @Input() private catNum;
+  @Input() private cateNum;
 
   constructor(private defiService: DefisService) { }
 
@@ -21,12 +27,8 @@ export class ModifDefisComponent implements OnInit {
   }
 
   mettreAJourDefi() {
-    this.def = new DefiModel();
-    this.def.nomDefi = this.nomDef;
-    this.def.descDefi = this.descDef;
-    this.def.infobulleDefi = this.infDef;
-    this.def.categorieId = this.catNum;
     this.defiService.updateDefi(this.defiService.idDefi, this.def).subscribe();
-    this.defiService.selection = null;
   }
+
+
 }

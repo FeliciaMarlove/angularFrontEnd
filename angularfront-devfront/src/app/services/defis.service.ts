@@ -1,6 +1,8 @@
 import {EventEmitter, Injectable, Output} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {DefiModel} from "../models/defi-model";
+import {Observable} from "rxjs";
+import {log} from "util";
 
 const URI = 'http://localhost:8080/api/defis/';
 const httpOptions = {
@@ -13,10 +15,18 @@ const httpOptions = {
 export class DefisService {
   public selection: DefiModel;
   public idDefi;
-  public idCat;
+  public catNum;
   @Output() change: EventEmitter<DefiModel> = new EventEmitter();
 
   constructor(private http: HttpClient) { }
+
+  select(defi) {
+    this.selection = defi;
+    this.idDefi = defi.idDefi;
+    this.catNum = this.getIdCat();
+    this.change.emit(this.selection);
+  }
+
   listActiveDefis() {
     return this.http.get(URI);
   }
@@ -39,10 +49,11 @@ export class DefisService {
     //RETOURNE UN OBSERVABLE BC -> HTTP !
   }
 
-  select(defi) {
-    this.selection = defi;
-    this.idDefi = defi.idDefi;
-    this.change.emit(this.selection);
+  getIdCat(): number {
+    this.getIdCategorie(this.idDefi).subscribe(
+      data => this.catNum = data
+    )
+    return this.catNum;
   }
 
   createDefi(defi) {
@@ -50,6 +61,13 @@ export class DefisService {
   }
 
   updateDefi(idDefi, defi) {
-    return this.http.post(URI + 'update/' + idDefi, JSON.stringify(defi), httpOptions);
+    const defiDto = {};
+    defiDto['id'] = defi.idDefi;
+    defiDto['nomDefi'] = defi.nomDefi;
+    defiDto['descDefi'] = defi.descDefi;
+    defiDto['infobulleDefi'] = defi.infobulleDefi;
+    defiDto['categorieId'] = defi.categorie.idCategorie;
+    // ^ noms attributs du Dto en back
+    return this.http.post(URI + 'update/' + idDefi, JSON.stringify(defiDto), httpOptions);
   }
 }

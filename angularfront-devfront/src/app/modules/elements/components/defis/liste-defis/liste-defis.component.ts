@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {DefisService} from '../../../../../services/defis.service';
 import {CategorieService} from "../../../../../services/categorie.service";
+import {DefiModel} from "../../../../../models/defi-model";
 
 @Component({
   selector: 'app-liste-defis',
@@ -8,6 +9,7 @@ import {CategorieService} from "../../../../../services/categorie.service";
   styleUrls: ['./liste-defis.component.css']
 })
 export class ListeDefisComponent implements OnInit {
+  @Output() selectDefi: EventEmitter<DefiModel> = new EventEmitter<DefiModel>();
   public defis;
   private inactiveChecker;
 
@@ -35,5 +37,9 @@ export class ListeDefisComponent implements OnInit {
         this.defis = data;
       }
     );
+  }
+
+  select(defi: DefiModel) {
+    this.selectDefi.emit(defi);
   }
 }
