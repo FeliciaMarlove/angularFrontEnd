@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {ParcoursModel} from '../../../../../models/parcours-model';
 import {ParcoursService} from '../../../../../services/parcours.service';
 
@@ -13,6 +13,8 @@ export class ParcoursAdminComponent implements OnInit {
   private descParc;
   private prix: number;
   private idCat: number;
+  toUpParcours: ParcoursModel;
+
 
   constructor(private parcService: ParcoursService) { }
 
@@ -24,8 +26,12 @@ export class ParcoursAdminComponent implements OnInit {
     this.parc.nomParcours = this.nomParc;
     this.parc.descParcours = this.descParc;
     this.parc.prix = this.prix;
-    this.parc.categorie = this.idCat;
+    this.parc.categorieId = this.idCat;
     this.parcService.createParcours(this.parc).subscribe();
+  }
+
+  getParcoursData(parcours: ParcoursModel) {
+    this.toUpParcours = parcours;
   }
 
 }

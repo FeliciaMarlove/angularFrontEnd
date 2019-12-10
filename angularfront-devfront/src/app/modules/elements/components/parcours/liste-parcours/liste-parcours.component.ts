@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {ParcoursService} from '../../../../../services/parcours.service';
+import {ParcoursModel} from "../../../../../models/parcours-model";
 
 @Component({
   selector: 'app-liste-parcours',
@@ -7,6 +8,7 @@ import {ParcoursService} from '../../../../../services/parcours.service';
   styleUrls: ['./liste-parcours.component.css']
 })
 export class ListeParcoursComponent implements OnInit {
+  @Input() private parc: ParcoursModel;
   public parcourss;
 
   constructor(private parcoursService: ParcoursService) { }
@@ -22,5 +24,4 @@ export class ListeParcoursComponent implements OnInit {
       }
     );
   }
-
 }

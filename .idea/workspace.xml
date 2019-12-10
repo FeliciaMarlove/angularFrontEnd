@@ -3,13 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="71d6f019-fec2-4de4-b102-f4f51dfe113d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/angularfront-devfront/src/app/modules/elements/components/defis/defis-admin/defis-admin.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/angularfront-devfront/src/app/modules/elements/components/defis/defis-admin/defis-admin.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/angularfront-devfront/src/app/modules/elements/components/defis/defis-admin/defis-admin.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/angularfront-devfront/src/app/modules/elements/components/defis/defis-admin/defis-admin.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/angularfront-devfront/src/app/modules/elements/components/defis/liste-defis/liste-defis.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/angularfront-devfront/src/app/modules/elements/components/defis/liste-defis/liste-defis.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/angularfront-devfront/src/app/modules/elements/components/defis/liste-defis/liste-defis.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/angularfront-devfront/src/app/modules/elements/components/defis/liste-defis/liste-defis.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/angularfront-devfront/src/app/modules/elements/components/defis/modif-defis/modif-defis.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/angularfront-devfront/src/app/modules/elements/components/defis/modif-defis/modif-defis.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/angularfront-devfront/src/app/modules/elements/components/defis/modif-defis/modif-defis.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/angularfront-devfront/src/app/modules/elements/components/defis/modif-defis/modif-defis.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularfront-devfront/src/app/models/parcours-model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/angularfront-devfront/src/app/models/parcours-model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularfront-devfront/src/app/modules/elements/components/parcours/liste-parcours/liste-parcours.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/angularfront-devfront/src/app/modules/elements/components/parcours/liste-parcours/liste-parcours.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularfront-devfront/src/app/modules/elements/components/parcours/modif-parcours/modif-parcours.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/angularfront-devfront/src/app/modules/elements/components/parcours/modif-parcours/modif-parcours.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularfront-devfront/src/app/modules/elements/components/parcours/modif-parcours/modif-parcours.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/angularfront-devfront/src/app/modules/elements/components/parcours/modif-parcours/modif-parcours.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularfront-devfront/src/app/modules/elements/components/parcours/parcours-admin/parcours-admin.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/angularfront-devfront/src/app/modules/elements/components/parcours/parcours-admin/parcours-admin.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularfront-devfront/src/app/modules/elements/components/parcours/parcours-admin/parcours-admin.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/angularfront-devfront/src/app/modules/elements/components/parcours/parcours-admin/parcours-admin.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/angularfront-devfront/src/app/services/defis.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/angularfront-devfront/src/app/services/defis.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularfront-devfront/src/app/services/parcours.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/angularfront-devfront/src/app/services/parcours.service.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -96,7 +97,8 @@
       <workItem from="1575411608829" duration="3303000" />
       <workItem from="1575445440007" duration="22970000" />
       <workItem from="1575619804164" duration="19623000" />
-      <workItem from="1575878163555" duration="9752000" />
+      <workItem from="1575878163555" duration="19054000" />
+      <workItem from="1575963951196" duration="957000" />
     </task>
     <servers />
   </component>

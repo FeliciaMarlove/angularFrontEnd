@@ -20,13 +20,6 @@ export class ModifParcoursComponent implements OnInit {
     this.parcoursService.change.subscribe(select => {this.parc = select; this.nomParc = select.nomParcours; this.descParc = select.descParcours; this.prixParc = select.prix;})
   }
   mettreAJourParcours() {
-    this.parc = new ParcoursModel();
-    this.parc.nomParcours = this.nomParc;
-    this.parc.descParcours = this.descParc;
-    this.parc.prix = this.prixParc;
-    this.parc.categorie = this.idCatParc;
     this.parcoursService.updateParcours(this.parc, this.parcoursService.parcoursId).subscribe();
-    this.parcoursService.selection = null;
   }
-
 }

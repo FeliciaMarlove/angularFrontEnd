@@ -1,8 +1,6 @@
 import {EventEmitter, Injectable, Output} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {DefiModel} from "../models/defi-model";
-import {Observable} from "rxjs";
-import {log} from "util";
 
 const URI = 'http://localhost:8080/api/defis/';
 const httpOptions = {
@@ -15,7 +13,6 @@ const httpOptions = {
 export class DefisService {
   public selection: DefiModel;
   public idDefi;
-  public catNum;
   @Output() change: EventEmitter<DefiModel> = new EventEmitter();
 
   constructor(private http: HttpClient) { }
@@ -23,7 +20,6 @@ export class DefisService {
   select(defi) {
     this.selection = defi;
     this.idDefi = defi.idDefi;
-    this.catNum = this.getIdCat();
     this.change.emit(this.selection);
   }
 
@@ -47,13 +43,6 @@ export class DefisService {
   getIdCategorie(idDefi) {
     return this.http.get(URI + 'getcat/' + idDefi);
     //RETOURNE UN OBSERVABLE BC -> HTTP !
-  }
-
-  getIdCat(): number {
-    this.getIdCategorie(this.idDefi).subscribe(
-      data => this.catNum = data
-    )
-    return this.catNum;
   }
 
   createDefi(defi) {

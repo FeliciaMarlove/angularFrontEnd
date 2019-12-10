@@ -2,11 +2,11 @@
 <button mat-raised-button (click)="parcoursService.setInactiveParcours(parcoursService.parcoursId)">Désactiver</button>
 <br>
 <p>Modifier parcours :</p>
-<p *ngIf="!parcoursService.selection">Sélectionnez un parcours pour le modifier</p>
-<form (ngSubmit)="mettreAJourParcours(); parcform.reset();" #parcform="ngForm" *ngIf="parcoursService.selection">
-  <input type="text" name="nom" [(ngModel)]="nomParc" placeholder="Nom parcours" required>
-  <input type="text" name="desc" [(ngModel)]="descParc" placeholder="Description parcours" required>
-  <input type="text" name="prix" [(ngModel)]="prixParc" placeholder="Prix" required>
-  <input type="text" name="cat" [(ngModel)]="idCatParc" placeholder="Catégorie (id)" required>
-  <button mat-raised-button *ngIf="parcoursService.selection">Mettre à jour</button>
+<p *ngIf="!parc">Sélectionnez un parcours pour le modifier</p>
+<form (ngSubmit)="mettreAJourParcours(); parcform.reset();" #parcform="ngForm" *ngIf="parc">
+  <input type="text" name="nom" [(ngModel)]="parc.nomParcours" placeholder="Nom parcours" required>
+  <input type="text" name="desc" [(ngModel)]="parc.descParcours" placeholder="Description parcours" required>
+  <input type="text" name="prix" [(ngModel)]="parc.prix" placeholder="Prix" required>
+  <input type="text" name="cat" [(ngModel)]="parc.categorie.idCategorie" placeholder="Catégorie (id)" required>
+  <button mat-raised-button *ngIf="parc">Mettre à jour</button>
 </form>

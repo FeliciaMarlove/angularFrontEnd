@@ -47,7 +47,12 @@ export class ParcoursService {
   }
 
   updateParcours(parcours, idParcours) {
-    console.log(URI + 'update/' + idParcours);
-    return this.http.post(URI + 'update/' + idParcours, JSON.stringify(parcours), httpOptions);
+    const parcDto = {};
+    parcDto['id'] = parcours.parcoursId;
+    parcDto['nomParcours'] = parcours.nomParcours;
+    parcDto['descParcours'] = parcours.descParcours;
+    parcDto['prix'] = parcours.prix;
+    parcDto['categorie'] = parcours.categorie.idCategorie;
+    return this.http.post(URI + 'update/' + idParcours, JSON.stringify(parcDto), httpOptions);
   }
 }

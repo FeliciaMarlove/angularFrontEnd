@@ -7,6 +7,8 @@
 <button mat-fab>Ajouter</button>
 </form>
 <br>
-<app-liste-parcours></app-liste-parcours>
-<app-modif-parcours></app-modif-parcours>
+<app-liste-parcours (selectParcours)="getParcoursData($event)"></app-liste-parcours>
+<app-modif-parcours [parc]="toUpParcours"></app-modif-parcours>
+
+<!--pas touche à la liste de catégories-->
 <app-liste-categories></app-liste-categories>
