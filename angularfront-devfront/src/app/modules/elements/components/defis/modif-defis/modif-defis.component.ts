@@ -18,7 +18,7 @@ export class ModifDefisComponent implements OnInit, OnChanges {
   @Input() private nomDef;
   @Input() private descDef;
   @Input() private infDef;
-  @Input() private cateNum;
+  @Input() private cateNum: number;
 
   constructor(private defiService: DefisService) { }
 

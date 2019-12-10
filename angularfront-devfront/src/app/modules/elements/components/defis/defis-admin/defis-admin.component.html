@@ -7,7 +7,7 @@
 <button mat-fab>Ajouter</button>
 </form>
 <br>
-<app-liste-defis (selectDefi)="defiData($event)"></app-liste-defis>
-<app-modif-defis [def]="addDefi"></app-modif-defis>
+<app-liste-defis (selectDefi)="getDefidata($event)"></app-liste-defis>
+<app-modif-defis [def]="toUpDefi"></app-modif-defis>
 <app-liste-categories></app-liste-categories>
 

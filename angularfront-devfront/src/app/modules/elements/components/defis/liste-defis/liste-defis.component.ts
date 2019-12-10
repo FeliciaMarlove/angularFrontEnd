@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {DefisService} from '../../../../../services/defis.service';
 import {CategorieService} from "../../../../../services/categorie.service";
 import {DefiModel} from "../../../../../models/defi-model";
@@ -39,7 +39,7 @@ export class ListeDefisComponent implements OnInit {
     );
   }
 
-  select(defi: DefiModel) {
-    this.selectDefi.emit(defi);
+  select(defiMod: DefiModel) {
+    this.selectDefi.emit(defiMod);
   }
 }

@@ -13,7 +13,7 @@ export class DefisAdminComponent implements OnInit {
   private descDef;
   private infoDef;
   private idCat;
-  addDefi: DefiModel;
+  toUpDefi: DefiModel;
 
   constructor(private defiService: DefisService) { }
 
@@ -29,8 +29,8 @@ export class DefisAdminComponent implements OnInit {
     this.defiService.createDefi(this.def).subscribe();
   }
 
-  defiData(defi: DefiModel) {
+  getDefidata(defi: DefiModel) {
     console.log(defi);
-    this.addDefi = defi;
+    this.toUpDefi = defi;
   }
 }

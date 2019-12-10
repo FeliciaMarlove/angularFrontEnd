@@ -10,6 +10,7 @@ import {ParcoursModel} from "../../../../../models/parcours-model";
 export class ListeParcoursComponent implements OnInit {
   @Input() private parc: ParcoursModel;
   public parcourss;
+  @Output() selectParcours: EventEmitter<ParcoursModel> = new EventEmitter<ParcoursModel>();
 
   constructor(private parcoursService: ParcoursService) { }
 
@@ -23,5 +24,9 @@ export class ListeParcoursComponent implements OnInit {
         this.parcourss = data;
       }
     );
+  }
+
+  select(parcoursMod: ParcoursModel) {
+    this.selectParcours.emit(parcoursMod);
   }
 }

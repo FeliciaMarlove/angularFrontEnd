@@ -12,7 +12,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class ParcoursService {
-  public selection;
+  public selection: ParcoursModel;
   public parcoursId: number;
   public defi: DefiModel;
   @Output() change: EventEmitter<ParcoursModel> = new EventEmitter();
@@ -52,7 +52,7 @@ export class ParcoursService {
     parcDto['nomParcours'] = parcours.nomParcours;
     parcDto['descParcours'] = parcours.descParcours;
     parcDto['prix'] = parcours.prix;
-    parcDto['categorie'] = parcours.categorie.idCategorie;
+    parcDto['categorieId'] = parcours.categorie.idCategorie;
     return this.http.post(URI + 'update/' + idParcours, JSON.stringify(parcDto), httpOptions);
   }
 }
