@@ -1,2 +1,15 @@
-<p>parcours works!</p>
+<p>Démarrer un parcours</p>
 <app-liste-parcours></app-liste-parcours>
+
+<!-- NgIf : -->
+<br>
+<button>Commencer !</button>
+<br>
+<hr>
+<div *ngIf="userModel.roleId == 2">
+  Vue pour l'administrateur uniquement :
+  <ul *ngFor="let x of parcUtilLiaisons">
+    <li>parcours : {{ x.parcours.parcoursId }} {{ x.parcours.nomParcours }} | utilisateur : {{ x.utilisateur.email }} | date début : {{ x.dateAchat }} | en cours : {{ true == x.isOngoing ? 'Oui' : 'Non' }}</li>
+  </ul>
+</div>
+

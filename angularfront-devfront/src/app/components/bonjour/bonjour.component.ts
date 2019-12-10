@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {UserService} from "../../services/user.service";
-import {UserModel} from "../../models/user-model";
 import {Router} from "@angular/router";
 
 @Component({
@@ -10,7 +9,6 @@ import {Router} from "@angular/router";
 })
 export class BonjourComponent implements OnInit {
   private userModel;
-  private email;
 
   constructor(private router: Router, private userService: UserService) { }
 
@@ -19,11 +17,6 @@ export class BonjourComponent implements OnInit {
       this.userModel = x;
       //pour accéder à "userModel" et à ses attributs par binding dans le html
     });
-  }
-
-  getLogin() {
-
-    return JSON.parse(localStorage.getItem('user')).login; //retourne l'email de l'utilisateur connecté (setté dans login.ts)
   }
 
   logout() {
