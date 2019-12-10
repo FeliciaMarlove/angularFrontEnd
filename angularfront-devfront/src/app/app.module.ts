@@ -22,7 +22,6 @@ import {MenuUserComponent} from './modules/menu/components/menu-user/menu-user.c
 import {MenuAdminComponent} from './modules/menu/components/menu-admin/menu-admin.component';
 import {RouterModule} from '@angular/router';
 import {AppRoutingModule} from './app-routing.module';
-import {UtilisateursComponent} from './modules/elements/components/utilisateurs/utilisateurmodif/utilisateurs.component';
 import {ParcoursComponent} from './modules/elements/components/parcours/parcours/parcours.component';
 import { ParcdefisComponent } from './modules/elements/components/parcours-defis/parcdefis/parcdefis.component';
 import {MatSidenavModule} from "@angular/material/sidenav";
@@ -52,7 +51,6 @@ import {FormsModule} from "@angular/forms";
     MenuComponent,
     MenuUserComponent,
     MenuAdminComponent,
-    UtilisateursComponent,
     ParcoursComponent,
     ParcdefisComponent,
   ],

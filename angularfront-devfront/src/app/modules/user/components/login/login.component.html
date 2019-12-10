@@ -1,11 +1,12 @@
-<h3>Connexion</h3>
+<h4>Connexion</h4>
 <div class="loginform">
-  <mat-form-field>
-    <input matInput placeholder="Adresse e-mail">
-  </mat-form-field>
-  <br>
-  <mat-form-field>
-    <input matInput placeholder="Mot de passe">
-  </mat-form-field>
+  <form (ngSubmit)="loginAttempt()">
+      <input name="mail" [(ngModel)]="email" place placeholder="Adresse e-mail" required>
+    <br>
+      <input name="pwd" type="password" [(ngModel)]="password" placeholder="Mot de passe" required>
+    <br>
+    <button>Se connecter</button>
+    <p *ngIf="!checkLogins">{{ msg }}</p>
+  </form>
 </div>
 
