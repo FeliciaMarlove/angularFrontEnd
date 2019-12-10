@@ -5,4 +5,8 @@ export class UserModel {
   email: string;
   password: string;
   newsletterOptIn: boolean;
+  roleId: number;
+  /* */
+  idUtilisateur: number;
+  paysId: number;
 }

@@ -1,1 +1,4 @@
-<h4>Bienvenue dans ton espace perso AJOUTER NOM</h4>
+<h4>Bienvenue dans ton espace perso {{userModel.prenomUtilisateur}} <bdi *ngIf="userModel.roleId == 2">{{userModel.nomUtilisateur}}</bdi> </h4>
+
+<button (click)="logout()">Déconnexion</button>
+<hr>

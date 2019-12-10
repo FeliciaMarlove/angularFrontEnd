@@ -12,8 +12,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class UserService {
-  private checkLogs: boolean;
-
+µ
   constructor(private http: HttpClient) { }
 
   listAllUsers() {
@@ -37,5 +36,9 @@ export class UserService {
     loginDto['email'] = logins.email;
     loginDto['password'] = logins.password;
     return this.http.post(URI + 'login', JSON.stringify(logins), httpOptions);
+  }
+
+  getUserFromMail(email: string) {
+    return this.http.get(URI + email);
   }
 }

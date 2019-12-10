@@ -1,6 +1,6 @@
 <div class="menuleft">
   <app-menu-user></app-menu-user>
-  <app-menu-admin></app-menu-admin>
+  <app-menu-admin *ngIf="isAdmin()"></app-menu-admin>
 </div>
 
 

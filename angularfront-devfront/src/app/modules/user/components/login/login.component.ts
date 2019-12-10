@@ -2,6 +2,7 @@ import {Component, Input, OnChanges, OnInit} from '@angular/core';
 import {UserService} from "../../../../services/user.service";
 import {LoginModel} from "../../../../models/login-model";
 import {Router} from "@angular/router";
+import {UserModel} from "../../../../models/user-model";
 
 @Component({
   selector: 'app-login',
@@ -18,6 +19,7 @@ export class LoginComponent implements OnInit, OnChanges {
   @Input() private loginModel: LoginModel;
   @Input() private checkLogins;
   private msg;
+  private userModel;
 
   constructor(private userService: UserService, private router: Router) { }
 
@@ -30,11 +32,27 @@ export class LoginComponent implements OnInit, OnChanges {
       this.checkLogins = x;
       console.log('statut login : '+this.checkLogins);
       if (this.checkLogins) {
+        localStorage.setItem('user', JSON.stringify({login: this.loginModel.email})) //stocke l'email de l'utilisateur connecté dans "localStorage"
+        //console.log(localStorage);
+        //console.log(JSON.parse(localStorage.getItem('user')).login);
+
+        /*RECUP DE L'UTILISATEUR DEPUIS L'EMAIL -- DEBUT*/
+        this.email = JSON.parse(localStorage.getItem('user')).login;
+        //console.log(this.email);
+
+        this.userService.getUserFromMail(this.email).subscribe( x => {
+          this.userModel = x;
+          //console.log(this.userModel); // RENVOIE BIEN MON UTILISATEUR DTO
+        });
+
+        //console.log('usermodel '+this.userModel); // MAIS PAS LA
+
+        /*RECUP DE L'UTILISATEUR DEPUIS L'EMAIL -- FIN*/
+
         this.router.navigateByUrl('dashboard');
       } else {
         this.msg = 'Wrong credentials';
       }
     });
   }
-
 }
