@@ -13,7 +13,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class UserService {
-µ
+
   constructor(private http: HttpClient) { }
 
   listAllUsers() {
@@ -41,5 +41,9 @@ export class UserService {
 
   getUserFromMail(email: string): any {
     return this.http.get(URI + email);
+  }
+
+  getDefiDuJour(idUtil): any {
+    return this.http.get('http://localhost:8080/api/utilparc/defi/' + idUtil);
   }
 }

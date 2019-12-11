@@ -1,10 +1,13 @@
 <h4>Démarrer un parcours</h4>
 <app-liste-parcours></app-liste-parcours>
 
-<!-- NgIf : (déjà en cours/pas en cours) -->
+<!-- To Do -->
+<!--<p *ngIf="isBrianBusy === true">Vous avez déjà un parcours en cours, terminez tous vos défis pour pouvoir démarrer un nouveau parcours !</p>-->
+
 <br>
 <button (click)="start(userId, parcoursService.parcoursId)">Commencer !</button>
 <br>
+
 <hr>
 <div *ngIf="userModel?.roleId == 2">
   Vue pour l'administrateur uniquement :

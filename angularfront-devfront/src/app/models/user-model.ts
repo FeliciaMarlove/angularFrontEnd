@@ -6,7 +6,7 @@ export class UserModel {
   password: string;
   newsletterOptIn: boolean;
   roleId: number;
-  /* */
   idUtilisateur: number;
   paysId: number;
+  isBusy: boolean;
 }

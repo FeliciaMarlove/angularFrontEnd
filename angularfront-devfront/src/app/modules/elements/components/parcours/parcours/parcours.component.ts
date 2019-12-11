@@ -11,6 +11,7 @@ export class ParcoursComponent implements OnInit {
   private parcUtilLiaisons;
   private userModel;
   private userId;
+  private isBrianBusy: boolean;
 
   constructor(private userService: UserService, private parcoursService: ParcoursService) { }
 
@@ -32,5 +33,4 @@ export class ParcoursComponent implements OnInit {
     console.log('idutil '+idUtil+' idparc '+idParc); // OK !
     this.parcoursService.startParcours(idUtil, idParc).subscribe();
   }
-
 }

@@ -1,1 +1,5 @@
-<p>Défi du jour :</p>
+<h4>Défi du jour :</h4>
+<div *ngIf="defi" class="defi">
+  {{ defi.nomDefi }} <br> {{ defi.descDefi }} <br> {{ defi.infobulleDefi }}
+
+</div>
