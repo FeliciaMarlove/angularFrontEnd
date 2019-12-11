@@ -19,7 +19,9 @@ export class MenuComponent implements OnInit {
   }
 
   isAdmin(): boolean {
-    return this.userModel.roleId == 2;
+    if (this.userModel) {
+      return this.userModel.roleId == 2;
+    }
   }
 
 }

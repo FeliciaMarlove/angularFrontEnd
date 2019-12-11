@@ -1,15 +1,15 @@
-<p>Démarrer un parcours</p>
+<h4>Démarrer un parcours</h4>
 <app-liste-parcours></app-liste-parcours>
 
-<!-- NgIf : -->
+<!-- NgIf : (déjà en cours/pas en cours) -->
 <br>
-<button>Commencer !</button>
+<button (click)="start(userId, parcoursService.parcoursId)">Commencer !</button>
 <br>
 <hr>
-<div *ngIf="userModel.roleId == 2">
+<div *ngIf="userModel?.roleId == 2">
   Vue pour l'administrateur uniquement :
   <ul *ngFor="let x of parcUtilLiaisons">
-    <li>parcours : {{ x.parcours.parcoursId }} {{ x.parcours.nomParcours }} | utilisateur : {{ x.utilisateur.email }} | date début : {{ x.dateAchat }} | en cours : {{ true == x.isOngoing ? 'Oui' : 'Non' }}</li>
+    <li> PARCOURS : {{ x.parcours.idParcours }} {{ x.parcours.nomParcours }} | UTILISATEUR : {{ x.utilisateur.idUtilisateur }} {{ x.utilisateur.email }} | DATE DEBUT : {{ x.dateAchat }} | EN COURS : {{ true == x.ongoing ? 'Oui' : 'Non' }} (taille {{ x.taille}})</li>
   </ul>
 </div>
 

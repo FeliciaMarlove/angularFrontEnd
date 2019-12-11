@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {UserModel} from "../models/user-model";
 import {LoginModel} from "../models/login-model";
+import {Observable} from "rxjs";
 
 const URI = 'http://localhost:8080/api/utilisateurs/';
 const httpOptions = {
@@ -38,7 +39,7 @@ export class UserService {
     return this.http.post(URI + 'login', JSON.stringify(logins), httpOptions);
   }
 
-  getUserFromMail(email: string) {
+  getUserFromMail(email: string): any {
     return this.http.get(URI + email);
   }
 }

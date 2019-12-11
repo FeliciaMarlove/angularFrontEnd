@@ -24,6 +24,9 @@ export class ParcoursService {
   listParcoursUtilisateursLiaison() {
     return this.http.get('http://localhost:8080/api/utilparc');
   }
+  startParcours(idUtil, idParcours) {
+    return this.http.post('http://localhost:8080/api/utilparc/start/' + idUtil +'/'+idParcours, httpOptions);
+  }
   getOneParcours(parcoursId) {
     return this.http.get(URI + parcoursId);
   }
