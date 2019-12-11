@@ -5,8 +5,11 @@
     <br>
       <input name="pwd" type="password" [(ngModel)]="password" placeholder="Mot de passe" required>
     <br>
-    <button>Se connecter</button>
+    <button class="btn">Se connecter</button>
     <p *ngIf="!checkLogins">{{ msg }}</p>
   </form>
 </div>
+
+<a routerLink="/create" routerLinkActive="active" class="btn">Créer un compte</a>
+
 

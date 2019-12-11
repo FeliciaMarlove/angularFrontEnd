@@ -1,1 +1,15 @@
-<p>create works!</p>
+<h4>Créer un compte</h4>
+
+<form (ngSubmit)="inscrireUtilisateur()">
+  <input type="text" name="nom" [(ngModel)]="nomU" placeholder="Nom" required>
+  <input type="text" name="prenom" [(ngModel)]="prenomU" placeholder="Prénom" required>
+  <input type="text" name="datenaiss" [(ngModel)]="datenaissU" placeholder="Date de naissance" required>
+  <input type="text" name="email" [(ngModel)]="emailU" placeholder="Adresse e-mail" required>
+  <input type="text" name="pw" [(ngModel)]="pwU" placeholder="Mot de passe" required>
+  <!-- meh -->
+  <input type="checkbox" name="newsletter" [(ngModel)]="newsletterU">
+  <!-- -->
+  <br>
+  <button class="btn">S'inscrire</button>
+</form>
+

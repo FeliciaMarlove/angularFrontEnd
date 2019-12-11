@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit, OnChanges {
 
         this.userService.getUserFromMail(this.email).subscribe( x => {
           this.userModel = x;
-          //console.log(this.userModel); // RENVOIE BIEN MON UTILISATEUR DTO
+          //console.log(this.userModel);
         });
 
         //console.log('usermodel '+this.userModel); // MAIS PAS LA

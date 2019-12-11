@@ -11,8 +11,10 @@ import {ParcoursComponent} from './modules/elements/components/parcours/parcours
 import {ParcdefisComponent} from './modules/elements/components/parcours-defis/parcdefis/parcdefis.component';
 
 const routes: Routes = [
-  //{ path: '', component: LoginComponent},
-  { path: '', component: DashboardComponent}, //EN ATTENDANT
+  { path: '', component: LoginComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'create', component: CreateComponent},
+  //{ path: '', component: DashboardComponent}, //EN ATTENDANT
   { path: 'dashboard', component: DashboardComponent, children: [
       { path: 'defidujour', component: DefiDuJourComponent},
       { path: 'parcours', component: ParcoursComponent},
@@ -21,9 +23,8 @@ const routes: Routes = [
       { path: 'categoriesadmin', component: CategoriesAdminComponent},
       { path: 'parcdefis', component: ParcdefisComponent},
       { path: '', component: DefiDuJourComponent},
-    ]},
-  { path: 'create', component: CreateComponent},
-  { path: 'login', component: LoginComponent},
+    ]
+  },
 ];
 
 @NgModule({

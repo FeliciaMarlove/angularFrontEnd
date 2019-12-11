@@ -16,19 +16,7 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  listAllUsers() {
-    return this.http.get(URI);
-  }
-
-  setInactiveUser(id) {
-    return this.http.post(URI + 'desactiver/' + id, httpOptions);
-  }
-
-  setActiveUser(id) {
-    return this.http.post(URI + 'activer/' + id, httpOptions);
-  }
-
-  createUser(user: UserModel) {
+  create(user) {
     return this.http.post(URI + 'creer', JSON.stringify(user), httpOptions);
   }
 
@@ -45,5 +33,21 @@ export class UserService {
 
   getDefiDuJour(idUtil): any {
     return this.http.get('http://localhost:8080/api/utilparc/defi/' + idUtil);
+  }
+
+  listAllUsers() {
+    return this.http.get(URI);
+  }
+
+  setInactiveUser(id) {
+    return this.http.post(URI + 'desactiver/' + id, httpOptions);
+  }
+
+  setActiveUser(id) {
+    return this.http.post(URI + 'activer/' + id, httpOptions);
+  }
+
+  createUser(user: UserModel) {
+    return this.http.post(URI + 'creer', JSON.stringify(user), httpOptions);
   }
 }
