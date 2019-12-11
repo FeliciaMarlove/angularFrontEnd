@@ -28,7 +28,7 @@ import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {HttpClientModule} from "@angular/common/http";
 import {MatButtonModule} from "@angular/material/button";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatCardModule} from "@angular/material/card";
 
@@ -65,6 +65,7 @@ import {MatCardModule} from "@angular/material/card";
     HttpClientModule,
     MatButtonModule,
     FormsModule,
+    ReactiveFormsModule,
     MatCheckboxModule,
     MatCardModule,
   ],
