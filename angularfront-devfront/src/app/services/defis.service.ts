@@ -13,14 +13,12 @@ const httpOptions = {
 export class DefisService {
   public selection: DefiModel;
   public idDefi;
-  @Output() change: EventEmitter<DefiModel> = new EventEmitter();
 
   constructor(private http: HttpClient) { }
 
   select(defi) {
     this.selection = defi;
     this.idDefi = defi.idDefi;
-    this.change.emit(this.selection);
   }
 
   listActiveDefis() {

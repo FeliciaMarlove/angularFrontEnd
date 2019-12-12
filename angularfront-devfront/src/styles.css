@@ -10,6 +10,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   width: 380px;
 }
 
+/*MAIN TITLE*/
+h2 {
+  text-align: center;
+}
+
 @media (max-width: 640px) {
   h4 {
     font-size: 15px;
@@ -18,4 +23,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     font-size: 24px;
   }
 }
+
+
 

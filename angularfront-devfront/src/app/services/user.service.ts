@@ -1,8 +1,7 @@
-import { Injectable } from '@angular/core';
+import {Injectable, Output} from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {UserModel} from "../models/user-model";
 import {LoginModel} from "../models/login-model";
-import {Observable} from "rxjs";
 
 const URI = 'http://localhost:8080/api/utilisateurs/';
 const httpOptions = {
@@ -14,9 +13,10 @@ const httpOptions = {
 })
 export class UserService {
 
+
   constructor(private http: HttpClient) { }
 
-  create(user) {
+  create(user): any {
     return this.http.post(URI + 'creer', JSON.stringify(user), httpOptions);
   }
 

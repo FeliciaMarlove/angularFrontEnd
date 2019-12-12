@@ -12,6 +12,7 @@ import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 export class CreateComponent implements OnInit {
   private userModel: UserModel;
   createForm: FormGroup;
+  private createFailed = false;
 
   constructor(private userService: UserService, private router: Router, private formBuilder: FormBuilder) { }
 
@@ -29,8 +30,15 @@ export class CreateComponent implements OnInit {
     if (this.createForm.valid) {
       this.userModel = new UserModel();
       this.userModel.setUser(this.createForm.value);
-      this.userService.create(this.userModel).subscribe();
-      this.router.navigateByUrl('login');
+      this.userService.create(this.userModel).subscribe(
+            x => {
+              this.createFailed = x;
+              console.log(this.createFailed)
+              if (this.createFailed === false) {
+                this.router.navigateByUrl('login');
+              }
+            }
+        );
     }
   }
 

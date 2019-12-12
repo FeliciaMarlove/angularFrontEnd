@@ -23,7 +23,6 @@ export class ModifDefisComponent implements OnInit, OnChanges {
   constructor(private defiService: DefisService) { }
 
   ngOnInit() {
-    //this.defiService.change.subscribe(select => {this.def = select; this.nomDef = select.nomDefi; this.descDef = select.descDefi; this.infDef = select.infobulleDefi;});
   }
 
   mettreAJourDefi() {

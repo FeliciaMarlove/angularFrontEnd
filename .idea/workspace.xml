@@ -3,14 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="71d6f019-fec2-4de4-b102-f4f51dfe113d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/angularfront-devfront/src/app/components/app/app.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/angularfront-devfront/src/app/components/app/app.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/angularfront-devfront/src/app/components/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/angularfront-devfront/src/app/components/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/angularfront-devfront/src/app/components/bonjour/bonjour.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/angularfront-devfront/src/app/components/bonjour/bonjour.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/angularfront-devfront/src/app/models/user-model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/angularfront-devfront/src/app/models/user-model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/angularfront-devfront/src/app/modules/dashboard/components/dashboard/dashboard.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/angularfront-devfront/src/app/modules/dashboard/components/dashboard/dashboard.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/angularfront-devfront/src/app/modules/dashboard/components/dashboard/dashboard.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/angularfront-devfront/src/app/modules/dashboard/components/dashboard/dashboard.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/angularfront-devfront/src/app/modules/elements/components/defis/defi-du-jour/defi-du-jour.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/angularfront-devfront/src/app/modules/elements/components/defis/defi-du-jour/defi-du-jour.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/angularfront-devfront/src/app/modules/elements/components/parcours/liste-parcours/liste-parcours.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/angularfront-devfront/src/app/modules/elements/components/parcours/liste-parcours/liste-parcours.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularfront-devfront/src/app/modules/elements/components/defis/modif-defis/modif-defis.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/angularfront-devfront/src/app/modules/elements/components/defis/modif-defis/modif-defis.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularfront-devfront/src/app/modules/user/components/create/create.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/angularfront-devfront/src/app/modules/user/components/create/create.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularfront-devfront/src/app/modules/user/components/create/create.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/angularfront-devfront/src/app/modules/user/components/create/create.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularfront-devfront/src/app/services/defis.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/angularfront-devfront/src/app/services/defis.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularfront-devfront/src/app/services/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/angularfront-devfront/src/app/services/user.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/angularfront-devfront/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/angularfront-devfront/src/styles.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -123,7 +120,7 @@
       <workItem from="1575878163555" duration="19054000" />
       <workItem from="1575963951196" duration="22779000" />
       <workItem from="1576051506747" duration="19508000" />
-      <workItem from="1576138808482" duration="10417000" />
+      <workItem from="1576138808482" duration="13144000" />
     </task>
     <servers />
   </component>
