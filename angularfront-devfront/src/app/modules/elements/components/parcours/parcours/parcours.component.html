@@ -12,7 +12,7 @@
 <div *ngIf="userModel?.roleId == 2">
   Vue pour l'administrateur uniquement :
   <ul *ngFor="let x of parcUtilLiaisons">
-    <li> PARCOURS : {{ x.parcours.idParcours }} {{ x.parcours.nomParcours }} | UTILISATEUR : {{ x.utilisateur.idUtilisateur }} {{ x.utilisateur.email }} | DATE DEBUT : {{ x.dateAchat }} | EN COURS : {{ true == x.ongoing ? 'Oui' : 'Non' }} (taille {{ x.taille}})</li>
+    <li> PARCOURS : {{ x.idParcours }} {{ x.nomParcours }} | UTILISATEUR : {{ x.idUtilisateur }} {{ x.email }} | DATE DEBUT : {{ x.dateAchat }} | EN COURS : {{ true == x.ongoing ? 'Oui' : 'Non' }} (taille {{ x.taille}})</li>
   </ul>
 </div>
 

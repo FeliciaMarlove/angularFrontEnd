@@ -10,12 +10,6 @@ import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
   styleUrls: ['./create.component.css']
 })
 export class CreateComponent implements OnInit {
-  private nomU;
-  private prenomU;
-  private datenaissU;
-  private emailU;
-  private pwU;
-  private newsletterU;
   private userModel: UserModel;
   createForm: FormGroup;
 
@@ -32,14 +26,12 @@ export class CreateComponent implements OnInit {
   }
 
   inscrireUtilisateur() {
-
     if (this.createForm.valid) {
       this.userModel = new UserModel();
       this.userModel.setUser(this.createForm.value);
       this.userService.create(this.userModel).subscribe();
       this.router.navigateByUrl('login');
     }
-    // check fail !
   }
 
 }
