@@ -31,6 +31,11 @@ export class ParcoursComponent implements OnInit {
 
   start(idUtil, idParc) {
     console.log('idutil '+idUtil+' idparc '+idParc); // OK !
-    this.parcoursService.startParcours(idUtil, idParc).subscribe();
+    this.parcoursService.startParcours(idUtil, idParc).subscribe(
+      x => {
+        this.isBrianBusy = !x;
+        console.log(this.isBrianBusy)
+      }
+    );
   }
 }

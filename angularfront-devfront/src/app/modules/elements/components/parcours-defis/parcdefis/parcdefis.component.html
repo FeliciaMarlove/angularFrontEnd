@@ -1,5 +1,11 @@
 <h4>Composition des parcours</h4>
 <app-liste-parcours></app-liste-parcours>
+<br>
+<hr>
+<button (click)="seeAllDefis()">Voir les défis du parcours</button>
+<ul>
+  <li *ngFor="let defi of defis">{{ defi.nomDefi }} {{ defi.descDefi}}</li>
+</ul>
 
 <!--
 voir la liste des défis par parcours

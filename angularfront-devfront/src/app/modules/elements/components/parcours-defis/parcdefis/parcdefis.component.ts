@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ParcoursService} from "../../../../../services/parcours.service";
+import {DefiModel} from "../../../../../models/defi-model";
 
 @Component({
   selector: 'app-parcdefis',
@@ -6,10 +8,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./parcdefis.component.css']
 })
 export class ParcdefisComponent implements OnInit {
+  private defis: DefiModel;
 
-  constructor() { }
+  constructor(private parcoursService: ParcoursService) { }
 
   ngOnInit() {
+  }
+  
+  seeAllDefis() {
+    this.parcoursService.getOneParcours(this.parcoursService.parcoursId).subscribe(
+      x => {
+        console.log(this.parcoursService.parcoursId);
+        this.defis = x;
+      }
+    )
   }
 
 }

@@ -13,7 +13,6 @@ const httpOptions = {
 })
 export class UserService {
 
-
   constructor(private http: HttpClient) { }
 
   create(user): any {

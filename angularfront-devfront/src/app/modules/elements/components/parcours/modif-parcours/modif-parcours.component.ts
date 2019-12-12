@@ -23,6 +23,7 @@ export class ModifParcoursComponent implements OnInit, OnChanges {
 
   ngOnInit() {
   }
+
   mettreAJourParcours() {
     this.parcoursService.updateParcours(this.parc, this.parcoursService.parcoursId).subscribe(
       x => this.hasFailed = x

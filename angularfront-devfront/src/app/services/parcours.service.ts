@@ -15,19 +15,21 @@ export class ParcoursService {
   public selection: ParcoursModel;
   public parcoursId: number;
   public defi: DefiModel;
-  @Output() change: EventEmitter<ParcoursModel> = new EventEmitter();
 
   constructor(private http: HttpClient) { }
   listAllParcours() {
+    return this.http.get(URI + 'all');
+  }
+  listActiveParcours() {
     return this.http.get(URI);
   }
   listParcoursUtilisateursLiaison() {
     return this.http.get('http://localhost:8080/api/utilparc');
   }
-  startParcours(idUtil, idParcours) {
+  startParcours(idUtil, idParcours): any {
     return this.http.post('http://localhost:8080/api/utilparc/start/' + idUtil +'/'+idParcours, httpOptions);
   }
-  getOneParcours(parcoursId) {
+  getOneParcours(parcoursId): any {
     return this.http.get(URI + parcoursId);
   }
   setActiveParcours(parcoursId) {
@@ -39,7 +41,6 @@ export class ParcoursService {
   select(parcours) {
     this.selection = parcours;
     this.parcoursId = parcours.idParcours;
-    this.change.emit(this.selection);
   }
   createParcours(parcours) {
     return this.http.post(URI + 'creer', JSON.stringify(parcours), httpOptions);

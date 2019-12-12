@@ -3,4 +3,5 @@ export class ParcoursModel {
   descParcours: string;
   prix: number;
   categorieId: number;
+  defis: [];
 }
