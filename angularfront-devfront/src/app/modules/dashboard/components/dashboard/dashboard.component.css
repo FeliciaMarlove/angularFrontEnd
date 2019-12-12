@@ -1,4 +1,34 @@
 .container {
-  position: absolute;
-  left: 322px;
+  display: grid;
+/*  grid-template-columns: auto;
+  grid-template-rows: auto;*/
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+  "h h h h "
+  "m c c ."
+  ". . . ."
+  ". . . .";
+}
+
+.header {
+  grid-area: h;
+  /*grid-row: 1;*/
+}
+
+.menu {
+  grid-area: m;
+  /*grid-column: 1;
+  grid-row: 2;*/
+}
+
+.content {
+  grid-area: c;
+  /*grid-column: 2;
+  grid-row: 2;*/
+}
+
+@media (max-width: 640px) {
+  .container {
+    grid-template-areas: "h" "m" "c" "c";
+  }
 }

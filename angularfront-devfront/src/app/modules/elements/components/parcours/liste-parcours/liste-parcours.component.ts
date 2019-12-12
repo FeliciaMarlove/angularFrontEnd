@@ -22,6 +22,7 @@ export class ListeParcoursComponent implements OnInit {
     this.parcoursService.listAllParcours().subscribe(
       (data: {}) => {
         this.parcourss = data;
+        console.log(data[0].isActiveParcours);
       }
     );
   }

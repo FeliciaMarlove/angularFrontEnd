@@ -9,3 +9,13 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   height: 350px;
   width: 380px;
 }
+
+@media (max-width: 640px) {
+  h4 {
+    font-size: 15px;
+  }
+  h2 {
+    font-size: 24px;
+  }
+}
+

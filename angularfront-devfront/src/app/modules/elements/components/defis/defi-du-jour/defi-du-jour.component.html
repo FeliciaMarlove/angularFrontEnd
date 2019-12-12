@@ -1,5 +1,7 @@
 <h4>Défi du jour :</h4>
 <div *ngIf="defi" class="defi">
   {{ defi.nomDefi }} <br> {{ defi.descDefi }} <br> {{ defi.infobulleDefi }}
-
+</div>
+<div *ngIf="!defi">
+  Inscrivez-vous à un parcours pour voir votre premier défi du jour !
 </div>

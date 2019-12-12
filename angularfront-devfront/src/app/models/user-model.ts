@@ -19,6 +19,8 @@ export class UserModel {
   //   this.motDePasse = motDePasse;
   //   this.newsletterOptIn = newsletterOptIn;
   // }
+
+  // UTILISATION DU FORMBUILDER :
   setUser(user: any) {
     this.nomUtilisateur = user.nom;
     this.prenomUtilisateur = user.prenom;
