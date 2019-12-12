@@ -17,13 +17,15 @@ export class ModifParcoursComponent implements OnInit, OnChanges {
   @Input() private descParc;
   @Input() private prixParc: number;
   @Input() private idCatParc: number;
+  private hasFailed;
 
   constructor(private parcoursService: ParcoursService) { }
 
   ngOnInit() {
-    //this.parcoursService.change.subscribe(select => {this.parc = select; this.nomParc = select.nomParcours; this.descParc = select.descParcours; this.prixParc = select.prix;})
   }
   mettreAJourParcours() {
-    this.parcoursService.updateParcours(this.parc, this.parcoursService.parcoursId).subscribe();
+    this.parcoursService.updateParcours(this.parc, this.parcoursService.parcoursId).subscribe(
+      x => this.hasFailed = x
+    );
   }
 }

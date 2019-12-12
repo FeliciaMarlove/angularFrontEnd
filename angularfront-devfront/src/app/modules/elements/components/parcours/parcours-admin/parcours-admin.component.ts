@@ -14,7 +14,7 @@ export class ParcoursAdminComponent implements OnInit {
   private prix: number;
   private idCat: number;
   toUpParcours: ParcoursModel;
-
+  private hasFailed;
 
   constructor(private parcService: ParcoursService) { }
 
@@ -27,7 +27,9 @@ export class ParcoursAdminComponent implements OnInit {
     this.parc.descParcours = this.descParc;
     this.parc.prix = this.prix;
     this.parc.categorieId = this.idCat;
-    this.parcService.createParcours(this.parc).subscribe();
+    this.parcService.createParcours(this.parc).subscribe(
+      x => this.hasFailed = x
+    );
   }
 
   getParcoursData(parcours: ParcoursModel) {

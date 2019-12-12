@@ -19,6 +19,7 @@ export class ModifDefisComponent implements OnInit, OnChanges {
   @Input() private descDef;
   @Input() private infDef;
   @Input() private cateNum: number;
+  private hasFailed;
 
   constructor(private defiService: DefisService) { }
 
@@ -26,7 +27,9 @@ export class ModifDefisComponent implements OnInit, OnChanges {
   }
 
   mettreAJourDefi() {
-    this.defiService.updateDefi(this.defiService.idDefi, this.def).subscribe();
+    this.defiService.updateDefi(this.defiService.idDefi, this.def).subscribe(
+      x => this.hasFailed = x
+    );
   }
 
 

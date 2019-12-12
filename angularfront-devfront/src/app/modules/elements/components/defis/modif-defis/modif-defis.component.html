@@ -1,9 +1,10 @@
 <button mat-raised-button (click)="defiService.setActiveDefi(defiService.idDefi)">Activer</button>
 <button mat-raised-button (click)="defiService.setInactiveDefi(defiService.idDefi)">Désactiver</button>
 <br>
+<p *ngIf="hasFailed" style="color: red">Ce défi existe déjà, choisissez un autre nom !</p>
 <p>Modifier défi :</p>
 <p *ngIf="!def">Sélectionnez un défi pour le modifier</p>
-<form (ngSubmit)="mettreAJourDefi(); defform.reset();" #defform="ngForm" *ngIf="def">
+<form (ngSubmit)="mettreAJourDefi();" #defform="ngForm" *ngIf="def">
   <input type="text" name="nomDef" [(ngModel)]="def.nomDefi" placeholder="Nom défi" required>
   <input type="text" name="descDef" [(ngModel)]="def.descDefi" placeholder="Description défi" required>
   <input type="text" name="infoDef" [(ngModel)]="def.infobulleDefi" placeholder="Infobulle défi" required>

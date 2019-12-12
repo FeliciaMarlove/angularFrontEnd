@@ -1,11 +1,12 @@
 <p>Nouveau défi :</p>
-<form (ngSubmit)="ajouterDefi(); defform.reset();" #defform="ngForm">
+<form (ngSubmit)="ajouterDefi();" #defform="ngForm">
 <input type="text" name="nomDefi" [(ngModel)]="nomDef" placeholder="Nom défi" required>
 <input type="text" name="descDefi" [(ngModel)]="descDef" placeholder="Description défi" required>
 <input type="text" name="infoDefi" [(ngModel)]="infoDef" placeholder="Infobulle défi" required>
 <input type="text" name="idCatDefi" [(ngModel)]="idCat" placeholder="Numéro de catégorie" required>
 <button mat-fab>Ajouter</button>
 </form>
+<p *ngIf="hasFailed" style="color: red">Ce défi existe déjà, choisissez un autre nom !</p>
 <br>
 <app-liste-defis (selectDefi)="getDefidata($event)"></app-liste-defis>
 <app-modif-defis [def]="toUpDefi"></app-modif-defis>

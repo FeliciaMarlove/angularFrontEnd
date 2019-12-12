@@ -32,7 +32,7 @@ export class CategorieService {
     return this.http.post(URI + 'creer', JSON.stringify(categorie), httpOptions);
   }
 
-  updateCategorie(idCategorie, categorie) {
+  updateCategorie(idCategorie, categorie): any {
     return this.http.post(URI + 'update/' + idCategorie, JSON.stringify(categorie), httpOptions);
   }
 

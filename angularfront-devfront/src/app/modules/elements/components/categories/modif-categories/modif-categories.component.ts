@@ -13,6 +13,7 @@ export class ModifCategoriesComponent implements OnInit {
   @Input() private cat: CategorieModel;
   @Input() private nomCat;
   @Input() private descCat;
+  private hasFailed;
 
   constructor(private categorieService: CategorieService) { }
 
@@ -24,8 +25,13 @@ export class ModifCategoriesComponent implements OnInit {
     this.cat = new CategorieModel();
     this.cat.nomCategorie = this.nomCat;
     this.cat.descCategorie = this.descCat;
-    this.categorieService.updateCategorie(this.categorieService.idCategorie, this.cat).subscribe();
-    this.categorieService.selection = null;
+    this.categorieService.updateCategorie(this.categorieService.idCategorie, this.cat).subscribe(
+      x => {
+        this.hasFailed = x;
+        if (!this.hasFailed) {
+          this.categorieService.selection = null;
+        }
+      }
+    );
   }
-
 }

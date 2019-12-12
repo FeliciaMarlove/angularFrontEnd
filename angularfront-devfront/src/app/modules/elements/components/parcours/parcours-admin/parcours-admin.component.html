@@ -1,11 +1,12 @@
 <p>Nouveau parcours :</p>
-<form (ngSubmit)="ajouterParcours(); parcform.reset();" #parcform="ngForm">
+<form (ngSubmit)="ajouterParcours();" #parcform="ngForm">
 <input type="text" name="nom" [(ngModel)]="nomParc" placeholder="Nom parcours" required>
 <input type="text" name="desc" [(ngModel)]="descParc" placeholder="Description parcours" required>
 <input type="text" name="prix" [(ngModel)]="prix" placeholder="Prix" required>
 <input type="text" name="idcat" [(ngModel)]="idCat" placeholder="Catégorie (id)" required>
 <button mat-fab>Ajouter</button>
 </form>
+<p *ngIf="hasFailed" style="color: red">Le parcours existe déjà, choisissez un autre nom !</p>
 <br>
 <app-liste-parcours (selectParcours)="getParcoursData($event)"></app-liste-parcours>
 <app-modif-parcours [parc]="toUpParcours"></app-modif-parcours>

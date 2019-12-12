@@ -1,9 +1,10 @@
 <p>Nouvelle catégorie :</p>
-<form (ngSubmit)="ajouterCategorie(); catform.reset();" #catform="ngForm">
+<form (ngSubmit)="ajouterCategorie();">
   <input type="text" name="nom" [(ngModel)]="nomCat" placeholder="Nom catégorie" required>
   <input type="text" name="desc" [(ngModel)]="descCat" placeholder="Description catégorie" required>
   <button mat-fab>Ajouter</button>
 </form>
+<p *ngIf="hasFailed">Le nom de catégorie existe déjà</p>
 <br>
 <app-liste-categories></app-liste-categories>
 <app-modif-categories></app-modif-categories>

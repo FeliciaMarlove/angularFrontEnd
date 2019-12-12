@@ -1,9 +1,10 @@
 <button mat-raised-button (click)="parcoursService.setActiveParcours(parcoursService.parcoursId)">Activer</button>
 <button mat-raised-button (click)="parcoursService.setInactiveParcours(parcoursService.parcoursId)">Désactiver</button>
 <br>
+<p *ngIf="hasFailed" style="color: red">Le nom de parcours est déjà utilisé !</p>
 <p>Modifier parcours :</p>
 <p *ngIf="!parc">Sélectionnez un parcours pour le modifier</p>
-<form (ngSubmit)="mettreAJourParcours(); parcform.reset();" #parcform="ngForm" *ngIf="parc">
+<form (ngSubmit)="mettreAJourParcours();" #parcform="ngForm" *ngIf="parc">
   <input type="text" name="nom" [(ngModel)]="parc.nomParcours" placeholder="Nom parcours" required>
   <input type="text" name="desc" [(ngModel)]="parc.descParcours" placeholder="Description parcours" required>
   <input type="text" name="prix" [(ngModel)]="parc.prix" placeholder="Prix" required>

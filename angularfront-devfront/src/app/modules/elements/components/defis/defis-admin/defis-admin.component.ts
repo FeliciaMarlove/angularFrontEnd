@@ -14,6 +14,7 @@ export class DefisAdminComponent implements OnInit {
   private infoDef;
   private idCat;
   toUpDefi: DefiModel;
+  private hasFailed;
 
   constructor(private defiService: DefisService) { }
 
@@ -26,7 +27,12 @@ export class DefisAdminComponent implements OnInit {
     this.def.descDefi = this.descDef;
     this.def.infobulleDefi = this.infoDef;
     this.def.categorieId = this.idCat;
-    this.defiService.createDefi(this.def).subscribe();
+    this.defiService.createDefi(this.def).subscribe(
+      x => {
+        this.hasFailed = x;
+        console.log(this.hasFailed)
+      }
+    );
   }
 
   getDefidata(defi: DefiModel) {
