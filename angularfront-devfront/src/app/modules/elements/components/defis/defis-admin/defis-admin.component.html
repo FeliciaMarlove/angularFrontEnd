@@ -3,7 +3,7 @@
 <input type="text" name="nomDefi" [(ngModel)]="nomDef" placeholder="Nom défi" required>
 <input type="text" name="descDefi" [(ngModel)]="descDef" placeholder="Description défi" required>
 <input type="text" name="infoDefi" [(ngModel)]="infoDef" placeholder="Infobulle défi" required>
-<input type="text" name="idCatDefi" [(ngModel)]="idCat" placeholder="Numéro de catégorie" required>
+<input type="number" name="idCatDefi" [(ngModel)]="idCat" placeholder="Numéro de catégorie" required>
 <button mat-fab>Ajouter</button>
 </form>
 <p *ngIf="hasFailed" style="color: red">Ce défi existe déjà, choisissez un autre nom !</p>

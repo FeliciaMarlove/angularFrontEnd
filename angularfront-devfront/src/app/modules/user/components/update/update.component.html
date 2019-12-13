@@ -2,7 +2,7 @@
 
   <form (ngSubmit)="mettreAJourUser(email, motDePasse);" #thisform="ngForm">
     <input type="email" [(ngModel)]="email" placeholder="email" name="email" required>
-    <input type="text" [(ngModel)]="motDePasse" placeholder="mot de passe" name="motdepasse">
+    <input type="text" [(ngModel)]="motDePasse" placeholder="mot de passe" name="motdepasse" required>
     <button>Mettre à jour</button>
   </form>
 <p *ngIf="warning" style="color: red">{{ warning }}</p>

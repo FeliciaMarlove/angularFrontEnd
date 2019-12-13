@@ -7,7 +7,7 @@
 <form (ngSubmit)="mettreAJourParcours();" #parcform="ngForm" *ngIf="parc">
   <input type="text" name="nom" [(ngModel)]="parc.nomParcours" placeholder="Nom parcours" required>
   <input type="text" name="desc" [(ngModel)]="parc.descParcours" placeholder="Description parcours" required>
-  <input type="text" name="prix" [(ngModel)]="parc.prix" placeholder="Prix" required>
-  <input type="text" name="cat" [(ngModel)]="parc.categorie.idCategorie" placeholder="Catégorie (id)" required>
+  <input type="number" name="prix" [(ngModel)]="parc.prix" placeholder="Prix" required>
+  <input type="number" name="cat" [(ngModel)]="parc.categorie.idCategorie" placeholder="Catégorie (id)" required>
   <button mat-raised-button *ngIf="parc">Mettre à jour</button>
 </form>
