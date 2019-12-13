@@ -45,7 +45,7 @@ export class ParcoursService {
   createParcours(parcours) {
     return this.http.post(URI + 'creer', JSON.stringify(parcours), httpOptions);
   }
-  ajouterDefiDansParcours(defi, idParcours) {
+  ajouterDefiDansParcours(defi, idParcours): any {
     return this.http.post(URI + 'ajouterDefi/' + idParcours, JSON.stringify(defi), httpOptions);
   }
 
