@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {UserService} from '../../../../services/user.service';
-import {FormControl} from '@angular/forms';
 import {UserModel} from '../../../../models/user-model';
+import {validate} from 'codelyzer/walkerFactory/walkerFn';
 
 @Component({
   selector: 'app-update',
@@ -14,7 +14,9 @@ export class UpdateComponent implements OnInit {
 
   @Input() private email;
   @Input() private motDePasse;
-
+  private warning = '';
+  // tslint:disable-next-line:max-line-length
+  private oldSchool: RegExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   constructor(private userService: UserService) { }
 
   ngOnInit() {
@@ -25,25 +27,30 @@ export class UpdateComponent implements OnInit {
         this.motDePasse = x.motDePasse;
         this.email = x.email;
         console.log('id ' + this.userId + ' mdp ' + this.motDePasse + ' mail ' + this.email);
-        // fonctionne on init
       }
     );
   }
-
   mettreAJourUser(m, p) {
-    this.userService.getUserFromMail(JSON.parse(localStorage.getItem('user')).login).subscribe( x => {
-        console.log('MAJ');
-        this.connectedUser = x; // userentity
-        console.log(this.connectedUser); // OK
-        this.userId = x.idUtilisateur;
-        this.connectedUser.motDePasse = p;
-        this.connectedUser.email = m;
-        console.log('id ' + this.userId + ' mdp ' + this.connectedUser.motDePasse + ' mail ' + this.connectedUser.email);
-        // MDP ET MAIL NULLs
-        this.userService.updateUser(this.connectedUser, this.userId).subscribe();
-      }
-    );
+    if (this.oldSchool.test(m)) {
+      if (p.length >= 4) {
+        console.log(this.oldSchool.test(m));
+        this.userService.getUserFromMail(JSON.parse(localStorage.getItem('user')).login).subscribe( x => {
+            console.log('MAJ');
+            this.connectedUser = x; // userentity
+            console.log(this.connectedUser);
+            this.userId = x.idUtilisateur;
+            this.connectedUser.motDePasse = p;
+            this.connectedUser.email = m;
+            console.log('id ' + this.userId + ' mdp ' + this.connectedUser.motDePasse + ' mail ' + this.connectedUser.email);
+            this.userService.updateUser(this.connectedUser, this.userId).subscribe();
+            this.warning = 'Modification effectuée';
+          }
+        );
+      } else {
+        this.warning = 'Veuillez entrer un mot de passe d\' au moins 4 caractères';
+        }
+     } else {
+      this.warning = 'Veuillez entrer une adresse e-mail valide';
+    }
   }
-
-
 }
