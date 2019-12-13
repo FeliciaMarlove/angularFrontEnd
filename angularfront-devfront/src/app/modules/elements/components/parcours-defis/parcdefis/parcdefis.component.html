@@ -2,13 +2,12 @@
 <app-liste-parcours></app-liste-parcours>
 <br>
 <hr>
-<button (click)="seeAllDefis()">Voir les défis du parcours</button>
+<button (click)="seeDefisInParcours()">Voir les défis du parcours</button>
 <ul>
-  <li *ngFor="let defi of defis">{{ defi.nomDefi }} {{ defi.descDefi}}</li>
+  <li *ngFor="let defi of defis" (click)="selectDefi(defi)">{{ defi.nomDefi }} {{ defi.descDefi}}</li>
 </ul>
+<button *ngIf="parcoursService.selection && defi" (click)="removeDefiFromParcours(defi)">Retirer le défi du parcours {{ parcoursService.parcoursId }} {{ parcoursService.selection.nomParcours }}</button>
 
 <!--
-voir la liste des défis par parcours
-remove un défi du parcours
 ajouter un défi dans le parcours
 -->

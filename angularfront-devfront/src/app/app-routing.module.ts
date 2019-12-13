@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'login', component: LoginComponent },
   { path: 'create', component: CreateComponent},
-  //{ path: '', component: DashboardComponent}, //EN ATTENDANT
+  // { path: '', component: DashboardComponent},
   { path: 'dashboard', component: DashboardComponent, children: [
       { path: 'defidujour', component: DefiDuJourComponent},
       { path: 'parcours', component: ParcoursComponent},
