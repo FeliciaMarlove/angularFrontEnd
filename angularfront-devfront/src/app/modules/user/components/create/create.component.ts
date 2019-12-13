@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {UserService} from "../../../../services/user.service";
-import {UserModel} from "../../../../models/user-model";
-import {Router} from "@angular/router";
-import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import {UserService} from '../../../../services/user.service';
+import {UserModel} from '../../../../models/user-model';
+import {Router} from '@angular/router';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-create',
@@ -20,10 +20,10 @@ export class CreateComponent implements OnInit {
     this.createForm = this.formBuilder.group({
       nom: new FormControl('', [Validators.required, Validators.minLength(2)]),
       prenom: new FormControl('', [Validators.required, Validators.minLength(2)]),
-      datenaiss: new FormControl('', []),
+      datenaiss: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.required, Validators.email]),
       pw: new FormControl('', [Validators.required, Validators.minLength(4)]),
-    })
+    });
   }
 
   inscrireUtilisateur() {
@@ -33,7 +33,7 @@ export class CreateComponent implements OnInit {
       this.userService.create(this.userModel).subscribe(
             x => {
               this.createFailed = x;
-              console.log(this.createFailed)
+              console.log(this.createFailed);
               if (this.createFailed === false) {
                 this.router.navigateByUrl('login');
               }

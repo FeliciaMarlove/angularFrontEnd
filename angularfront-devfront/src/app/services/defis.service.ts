@@ -40,7 +40,6 @@ export class DefisService {
 
   getIdCategorie(idDefi) {
     return this.http.get(URI + 'getcat/' + idDefi);
-    //RETOURNE UN OBSERVABLE BC -> HTTP !
   }
 
   createDefi(defi) {

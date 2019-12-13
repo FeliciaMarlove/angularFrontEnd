@@ -1,4 +1,5 @@
 <h4>Bienvenue dans ton espace perso {{userModel?.prenomUtilisateur}} <bdi *ngIf="userModel?.roleId == 2">{{userModel?.nomUtilisateur}} ({{ userModel?.idUtilisateur}})</bdi> </h4>
 
 <button (click)="logout()">Déconnexion</button>
+<button (click)="update()">Modifier</button>
 <hr>

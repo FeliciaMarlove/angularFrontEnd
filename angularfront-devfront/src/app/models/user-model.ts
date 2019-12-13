@@ -1,7 +1,7 @@
 export class UserModel {
   nomUtilisateur: string;
   prenomUtilisateur: string;
-  dateNaiss: string;
+  dateNaiss: Date;
   email: string;
   motDePasse: string;
   newsletterOptIn: boolean;
@@ -11,6 +11,7 @@ export class UserModel {
   isBusy: boolean;
 
 
+  // tslint:disable-next-line:max-line-length
   // setUser(nomUtilisateur: string, prenomUtilisateur: string, dateNaiss: string, email: string, motDePasse: string, newsletterOptIn: boolean) {
   //   this.nomUtilisateur = nomUtilisateur;
   //   this.prenomUtilisateur = prenomUtilisateur;
@@ -25,7 +26,7 @@ export class UserModel {
     this.nomUtilisateur = user.nom;
     this.prenomUtilisateur = user.prenom;
     this.dateNaiss = user.datenaiss;
-    this.email = user.email;
+    this.email = user._email;
     this.motDePasse = user.pw;
     // this.newsletterOptIn = user.newsletterOptIn;
   }

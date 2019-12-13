@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {UserService} from "../../services/user.service";
-import {Router} from "@angular/router";
+import {UserService} from '../../services/user.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-bonjour',
@@ -15,7 +15,7 @@ export class BonjourComponent implements OnInit {
   ngOnInit() {
     this.userService.getUserFromMail(JSON.parse(localStorage.getItem('user')).login).subscribe( x => {
       this.userModel = x;
-      //pour accéder à "userModel" et à ses attributs par binding dans le html
+      // pour accéder à "userModel" et à ses attributs par binding dans le html
     });
   }
 
@@ -24,7 +24,7 @@ export class BonjourComponent implements OnInit {
     this.router.navigateByUrl('/login');
   }
 
-
-
-
+  update() {
+    this.router.navigateByUrl('/dashboard/updateuser');
+  }
 }

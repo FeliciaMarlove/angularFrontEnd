@@ -9,6 +9,7 @@ import {LoginComponent} from './modules/user/components/login/login.component';
 import {DefiDuJourComponent} from './modules/elements/components/defis/defi-du-jour/defi-du-jour.component';
 import {ParcoursComponent} from './modules/elements/components/parcours/parcours/parcours.component';
 import {ParcdefisComponent} from './modules/elements/components/parcours-defis/parcdefis/parcdefis.component';
+import {UpdateComponent} from './modules/user/components/update/update.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -23,6 +24,7 @@ const routes: Routes = [
       { path: 'categoriesadmin', component: CategoriesAdminComponent},
       { path: 'parcdefis', component: ParcdefisComponent},
       { path: '', component: DefiDuJourComponent},
+      { path: 'updateuser', component: UpdateComponent}
     ]
   },
 ];

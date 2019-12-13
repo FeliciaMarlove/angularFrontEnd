@@ -1,1 +1,12 @@
-<p>update works!</p>
+<h3>Mettre à jour ton compte</h3>
+
+<!--<div *ngIf="userService.logged">-->
+  <form (ngSubmit)="mettreAJourUser(email, motDePasse); thisform.reset()" #thisform="ngForm">
+    <input type="text" [(ngModel)]="email" placeholder="email" name="email">
+    <input type="text" [(ngModel)]="motDePasse" placeholder="mot de passe" name="motdepasse">
+    <button>Mettre à jour</button>
+  </form>
+<!--</div>-->
+
+
+

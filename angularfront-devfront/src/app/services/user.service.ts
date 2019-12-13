@@ -12,6 +12,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class UserService {
+  logged;
 
   constructor(private http: HttpClient) { }
 
@@ -23,6 +24,7 @@ export class UserService {
     const loginDto = {};
     loginDto['email'] = logins.email;
     loginDto['password'] = logins.password;
+    this.logged = true;
     return this.http.post(URI + 'login', JSON.stringify(logins), httpOptions);
   }
 
@@ -46,7 +48,19 @@ export class UserService {
     return this.http.post(URI + 'activer/' + id, httpOptions);
   }
 
-  createUser(user: UserModel) {
-    return this.http.post(URI + 'creer', JSON.stringify(user), httpOptions);
+  updateUser(user, id) {
+    // user = userentity
+    const userDto = {};
+    userDto['idUtilisateur'] = user.idUtilisateur;
+    userDto['nomUtilisateur'] = user.nomUtilisateur;
+    userDto['prenomUtilisateur'] = user.prenomUtilisateur;
+    userDto['email'] = user.email;
+    userDto['motDePasse'] = user.motDePasse;
+    userDto['newsletterOptIn'] = user.newsletterOptIn;
+    userDto['roleId'] = user.roleId;
+    userDto['isBusy'] = user.isBusy;
+    // méthode màj en back prend un userdto
+    return this.http.post(URI + 'update/' + id, JSON.stringify(userDto), httpOptions);
   }
+
 }
