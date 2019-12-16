@@ -1,5 +1,5 @@
-<h4>Bienvenue dans ton espace perso {{userModel?.prenomUtilisateur}} <bdi *ngIf="userModel?.roleId == 2">{{userModel?.nomUtilisateur}} ({{ userModel?.idUtilisateur}})</bdi> </h4>
+<h4>Bienvenue dans ton espace perso {{userModel?.prenomUtilisateur}} <bdi *ngIf="userModel?.roleId == 2">{{userModel?.nomUtilisateur}} </bdi> ({{ userModel?.idUtilisateur}})</h4>
 
 <button (click)="logout()">Déconnexion</button>
-<button (click)="update()">Modifier</button>
+<!--<button (click)="update()">Modifier</button>--> <!--pas utilisé car le mdp est hashé-->
 <hr>

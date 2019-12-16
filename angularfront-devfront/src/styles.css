@@ -6,8 +6,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .toScrollListes {
   overflow: scroll;
   scroll-behavior: smooth;
-  height: 350px;
-  width: 380px;
+  max-height: 350px;
+  min-height: 140px;
+  min-width: 300px;
+  max-width: 380px;
 }
 
 /*MAIN TITLE*/

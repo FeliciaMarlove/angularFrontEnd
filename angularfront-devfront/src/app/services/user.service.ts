@@ -1,7 +1,6 @@
 import {Injectable, Output} from '@angular/core';
-import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {UserModel} from "../models/user-model";
-import {LoginModel} from "../models/login-model";
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {LoginModel} from '../models/login-model';
 
 const URI = 'http://localhost:8080/api/utilisateurs/';
 const httpOptions = {
@@ -12,7 +11,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class UserService {
-  logged;
+  logged = false;
 
   constructor(private http: HttpClient) { }
 

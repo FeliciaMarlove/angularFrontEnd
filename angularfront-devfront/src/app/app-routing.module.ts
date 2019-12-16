@@ -10,13 +10,14 @@ import {DefiDuJourComponent} from './modules/elements/components/defis/defi-du-j
 import {ParcoursComponent} from './modules/elements/components/parcours/parcours/parcours.component';
 import {ParcdefisComponent} from './modules/elements/components/parcours-defis/parcdefis/parcdefis.component';
 import {UpdateComponent} from './modules/user/components/update/update.component';
+import {AuthGuard} from './auth/auth.guard';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'login', component: LoginComponent },
   { path: 'create', component: CreateComponent},
   // { path: '', component: DashboardComponent},
-  { path: 'dashboard', component: DashboardComponent, children: [
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard], children: [
       { path: 'defidujour', component: DefiDuJourComponent},
       { path: 'parcours', component: ParcoursComponent},
       { path: 'parcoursadmin', component: ParcoursAdminComponent},
@@ -27,6 +28,7 @@ const routes: Routes = [
       { path: 'updateuser', component: UpdateComponent}
     ]
   },
+  { path: '**', component: LoginComponent}
 ];
 
 @NgModule({

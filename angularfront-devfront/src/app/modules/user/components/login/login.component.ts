@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit, OnChanges {
 
         this.router.navigateByUrl('dashboard');
       } else {
-        this.msg = 'Wrong credentials';
+        this.msg = 'Identifiant/mot de passe incorrect.';
       }
     });
   }

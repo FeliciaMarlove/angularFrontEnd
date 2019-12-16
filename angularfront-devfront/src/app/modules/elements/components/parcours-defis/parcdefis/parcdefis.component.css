@@ -1,0 +1,27 @@
+.parcdefiscont {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+  " m m r"
+  " m m r"
+  " b b r"
+  " b b r";
+}
+
+.rightside {
+  grid-area: r;
+}
+
+.below {
+  grid-area: b;
+}
+
+.midlane {
+  grid-area: m;
+}
+
+@media (max-width: 640px) {
+  .parcdefiscont {
+    grid-template-areas: "m" "r" "b";
+  }
+}

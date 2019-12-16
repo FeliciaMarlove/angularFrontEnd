@@ -27,6 +27,7 @@ export class CreateComponent implements OnInit {
   }
 
   inscrireUtilisateur() {
+    console.log(this.createForm.valid);
     if (this.createForm.valid) {
       this.userModel = new UserModel();
       this.userModel.setUser(this.createForm.value);

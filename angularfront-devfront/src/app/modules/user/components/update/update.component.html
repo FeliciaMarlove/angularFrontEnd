@@ -1,5 +1,7 @@
 <h3>Mettre à jour ton compte</h3>
 
+<!--Pas utilisé bc le mdp est hashé-->
+
   <form (ngSubmit)="mettreAJourUser(email, motDePasse);" #thisform="ngForm">
     <input type="email" [(ngModel)]="email" placeholder="email" name="email" required>
     <input type="text" [(ngModel)]="motDePasse" placeholder="mot de passe" name="motdepasse" required>

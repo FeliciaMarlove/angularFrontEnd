@@ -21,12 +21,12 @@ export class UserModel {
   //   this.newsletterOptIn = newsletterOptIn;
   // }
 
-  // UTILISATION DU FORMBUILDER :
+  // UTILISATION DS FORMBUILDER :
   setUser(user: any) {
     this.nomUtilisateur = user.nom;
     this.prenomUtilisateur = user.prenom;
     this.dateNaiss = user.datenaiss;
-    this.email = user._email;
+    this.email = user.email;
     this.motDePasse = user.pw;
     // this.newsletterOptIn = user.newsletterOptIn;
   }
