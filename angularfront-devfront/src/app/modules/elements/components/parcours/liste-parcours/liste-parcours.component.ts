@@ -1,9 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {ParcoursService} from '../../../../../services/parcours.service';
-import {ParcoursModel} from "../../../../../models/parcours-model";
-import {UserService} from "../../../../../services/user.service";
-import {UserModel} from "../../../../../models/user-model";
-import {Router} from "@angular/router";
+import {ParcoursModel} from '../../../../../models/parcours-model';
+
 
 @Component({
   selector: 'app-liste-parcours',
@@ -16,7 +14,7 @@ export class ListeParcoursComponent implements OnInit {
   @Output() selectParcours: EventEmitter<ParcoursModel> = new EventEmitter<ParcoursModel>();
   private inactiveChecker;
 
-  constructor(private parcoursService: ParcoursService, private router: Router) { }
+  constructor(private parcoursService: ParcoursService) { }
 
   ngOnInit() {
     this.getActiveParcours();
@@ -26,10 +24,10 @@ export class ListeParcoursComponent implements OnInit {
     this.parcourss = [];
     this.parcoursService.listActiveParcours().subscribe(
       data => this.parcourss = data
-    )
+    );
   }
 
-  /*Mise en place du check if admin -> voir actif/inactif, set actif/inactif...*/
+  /*not used*/
   getAllParcours() {
     this.inactiveChecker = true;
     this.parcourss = [];

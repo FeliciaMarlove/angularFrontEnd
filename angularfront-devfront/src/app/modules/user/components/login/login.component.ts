@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit, OnChanges {
     this.loginModel = new LoginModel(this.email, this.password);
     this.userService.login(this.loginModel).subscribe( x => {
       this.checkLogins = x;
-      console.log('statut login : ' + this.checkLogins);
+      console.log('/login/ CheckLogins ? ' + this.checkLogins);
       if (this.checkLogins) {
         // tslint:disable-next-line:max-line-length
         localStorage.setItem('user', JSON.stringify({login: this.loginModel.email})); // stocke l'email de l'utilisateur connecté dans "localStorage"

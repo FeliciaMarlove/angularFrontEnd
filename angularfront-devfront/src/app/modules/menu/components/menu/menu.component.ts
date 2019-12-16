@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {UserService} from "../../../../services/user.service";
+import {UserService} from '../../../../services/user.service';
 
 @Component({
   selector: 'app-menu',
@@ -14,13 +14,12 @@ export class MenuComponent implements OnInit {
   ngOnInit() {
     this.userService.getUserFromMail(JSON.parse(localStorage.getItem('user')).login).subscribe( x => {
       this.userModel = x;
-      //pour accéder à "userModel" et à ses attributs par binding dans le html
     });
   }
 
   isAdmin(): boolean {
     if (this.userModel) {
-      return this.userModel.roleId == 2;
+      return this.userModel.roleId === 2;
     }
   }
 

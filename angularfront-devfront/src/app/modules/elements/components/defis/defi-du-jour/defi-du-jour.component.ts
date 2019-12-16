@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {UserService} from "../../../../../services/user.service";
 import {DefiModel} from "../../../../../models/defi-model";
-import {UserModel} from "../../../../../models/user-model";
+import {UserModel} from '../../../../../models/user-model';
 
 @Component({
   selector: 'app-defi-du-jour',
@@ -20,7 +20,7 @@ export class DefiDuJourComponent implements OnInit {
     this.userService.getUserFromMail(JSON.parse(localStorage.getItem('user')).login).subscribe( x => {
         this.user = x;
         this.userId = x.idUtilisateur;
-        console.log(this.userId); // OK !
+        console.log('/defi du jour/ Id utilisateur : ' + this.userId);
         this.showDefi();
       }
     );
@@ -30,7 +30,7 @@ export class DefiDuJourComponent implements OnInit {
     this.userService.getDefiDuJour(this.userId).subscribe(
       x => {
         this.defi = x;
-        console.log(this.defi); // OK
+        console.log('/defi du jour/ Defi du jour : ' + this.defi);
       }
     );
   }

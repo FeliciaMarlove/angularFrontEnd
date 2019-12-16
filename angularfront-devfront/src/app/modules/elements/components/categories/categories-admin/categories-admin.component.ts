@@ -25,7 +25,7 @@ export class CategoriesAdminComponent implements OnInit {
     this.categoriesService.createCategorie(this.cat).subscribe(
       x => {
         this.hasFailed = x;
-        console.log(this.hasFailed)
+        console.log('/categories admin/ Has failed ? ' + this.hasFailed);
       }
     );
   }

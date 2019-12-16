@@ -1,7 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {DefisService} from '../../../../../services/defis.service';
-import {CategorieService} from "../../../../../services/categorie.service";
-import {DefiModel} from "../../../../../models/defi-model";
+import {DefiModel} from '../../../../../models/defi-model';
 
 @Component({
   selector: 'app-liste-defis',

@@ -27,14 +27,14 @@ export class CreateComponent implements OnInit {
   }
 
   inscrireUtilisateur() {
-    console.log(this.createForm.valid);
+    console.log('/create/ Formulaire valide ? ' + this.createForm.valid);
     if (this.createForm.valid) {
       this.userModel = new UserModel();
       this.userModel.setUser(this.createForm.value);
       this.userService.create(this.userModel).subscribe(
             x => {
               this.createFailed = x;
-              console.log(this.createFailed);
+              console.log('/create/ Create Failed ? ' + this.createFailed);
               if (this.createFailed === false) {
                 this.router.navigateByUrl('login');
               }

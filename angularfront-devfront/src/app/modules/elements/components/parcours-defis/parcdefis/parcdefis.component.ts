@@ -11,7 +11,6 @@ import {DefisService} from '../../../../../services/defis.service';
 export class ParcdefisComponent implements OnInit {
   private defis: DefiModel[];
   private defi: DefiModel;
-  private newDefi: DefiModel;
   private success = true;
 
   constructor(private parcoursService: ParcoursService, private defiService: DefisService) { }
@@ -29,14 +28,14 @@ export class ParcdefisComponent implements OnInit {
   }
 
   selectDefi(defi: DefiModel) {
-    console.log(defi);
+    console.log('/parcdefis/ Defi : ' + defi);
     this.defi = defi;
   }
 
   removeDefiFromParcours(defi) {
     this.parcoursService.supprimerDefiDeParcours(this.parcoursService.parcoursId, defi.idDefi).subscribe(
       x => {
-        console.log(this.parcoursService.parcoursId + ' ' + defi.idDefi);
+        console.log('/parcdefis/ Parcours : ' + this.parcoursService.parcoursId + ' | Defi :' + defi.idDefi);
       }
     );
   }
@@ -44,9 +43,9 @@ export class ParcdefisComponent implements OnInit {
   addDefiIntoParcours(newDefi) {
     this.parcoursService.ajouterDefiDansParcours(newDefi.idDefi, this.parcoursService.parcoursId).subscribe(
       x => {
-        console.log(newDefi.idDefi + ' ' + this.parcoursService.parcoursId);
+        console.log('/parcdefis/ Id défi à ajouter : ' + newDefi.idDefi + ' | Id du parcours : ' + this.parcoursService.parcoursId);
         this.success = x;
-        console.log(this.success);
+        console.log('/parcdefis/ Success ? ' + this.success);
       }
     );
   }

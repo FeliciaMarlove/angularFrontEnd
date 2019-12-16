@@ -21,7 +21,7 @@ export class UpdateComponent implements OnInit {
 
   ngOnInit() {
     this.userService.getUserFromMail(JSON.parse(localStorage.getItem('user')).login).subscribe( x => {
-        console.log('INIT');
+        console.log('/update/ INIT infos de l\'utilisateur');
         this.connectedUser = x;
         this.userId = x.idUtilisateur;
         this.motDePasse = x.motDePasse;
@@ -33,15 +33,15 @@ export class UpdateComponent implements OnInit {
   mettreAJourUser(m, p) {
     if (this.oldSchool.test(m)) {
       if (p.length >= 4) {
-        console.log(this.oldSchool.test(m));
+        console.log('/update/ Email vs RegEx ? ' + this.oldSchool.test(m));
         this.userService.getUserFromMail(JSON.parse(localStorage.getItem('user')).login).subscribe( x => {
-            console.log('MAJ');
+            console.log('/update/ MAJ de l\'utilisateur');
             this.connectedUser = x; // userentity
-            console.log(this.connectedUser);
+            console.log('/update/ Utilisateur connecté ' + this.connectedUser);
             this.userId = x.idUtilisateur;
             this.connectedUser.motDePasse = p;
             this.connectedUser.email = m;
-            console.log('id ' + this.userId + ' mdp ' + this.connectedUser.motDePasse + ' mail ' + this.connectedUser.email);
+            console.log('/update/ id ' + this.userId + ' mdp ' + this.connectedUser.motDePasse + ' mail ' + this.connectedUser.email);
             this.userService.updateUser(this.connectedUser, this.userId).subscribe();
             this.warning = 'Modification effectuée';
           }

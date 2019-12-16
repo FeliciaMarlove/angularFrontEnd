@@ -30,13 +30,13 @@ export class DefisAdminComponent implements OnInit {
     this.defiService.createDefi(this.def).subscribe(
       x => {
         this.hasFailed = x;
-        console.log(this.hasFailed)
+        console.log('/defi-admin/ Has failed ? ' + this.hasFailed);
       }
     );
   }
 
   getDefidata(defi: DefiModel) {
-    console.log(defi);
+    console.log('/defi-admin/ Defi : ' + defi);
     this.toUpDefi = defi;
   }
 }

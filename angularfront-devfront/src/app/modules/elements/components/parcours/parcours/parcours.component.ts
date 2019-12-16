@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {UserService} from "../../../../../services/user.service";
-import {ParcoursService} from "../../../../../services/parcours.service";
+import {UserService} from '../../../../../services/user.service';
+import {ParcoursService} from '../../../../../services/parcours.service';
 
 @Component({
   selector: 'app-parcours',
@@ -20,7 +20,7 @@ export class ParcoursComponent implements OnInit {
     this.userService.getUserFromMail(JSON.parse(localStorage.getItem('user')).login).subscribe( x => {
       this.userModel = x;
       this.userId = x.idUtilisateur;
-      console.log(this.userId); // OK !
+      console.log('/update/ Id utilisateur ' + this.userId);
     }
     );
   }
@@ -30,11 +30,11 @@ export class ParcoursComponent implements OnInit {
   }
 
   start(idUtil, idParc) {
-    console.log('idutil '+idUtil+' idparc '+idParc); // OK !
+    console.log('/parcours/ Id utilisateur : ' + idUtil + ' Id parcours :  ' + idParc);
     this.parcoursService.startParcours(idUtil, idParc).subscribe(
       x => {
         this.isBrianBusy = !x;
-        console.log(this.isBrianBusy)
+        console.log('/parcours/ isBrianBusy ? ' + this.isBrianBusy);
       }
     );
   }
