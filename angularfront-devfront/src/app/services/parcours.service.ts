@@ -1,7 +1,7 @@
 import {EventEmitter, Injectable, Output} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {DefiModel} from '../models/defi-model';
-import {ParcoursModel} from "../models/parcours-model";
+import {ParcoursModel} from '../models/parcours-model';
 
 const URI = 'http://localhost:8080/api/parcours/';
 const httpOptions = {

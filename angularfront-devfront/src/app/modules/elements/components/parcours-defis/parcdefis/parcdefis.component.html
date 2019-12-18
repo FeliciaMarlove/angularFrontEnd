@@ -14,7 +14,7 @@
     <ul>
       <li *ngFor="let defi of defis" (click)="selectDefi(defi)">{{ defi.nomDefi }} {{ defi.descDefi}}</li>
     </ul>
-    <button *ngIf="parcoursService.selection && defi" (click)="removeDefiFromParcours(defi)">Retirer le défi <i>{{ defi.idDefi}} {{ defi.nomDefi }}</i> du parcours <i>{{ parcoursService.parcoursId }} {{ parcoursService.selection.nomParcours }}</i></button>
+    <button *ngIf="parcoursService.selection && defi" (click)="removeDefiFromParcours(defi); defi = null">Retirer le défi <i>{{ defi.idDefi}} {{ defi.nomDefi }}</i> du parcours <i>{{ parcoursService.parcoursId }} {{ parcoursService.selection.nomParcours }}</i></button>
     <br>
   </div>
 

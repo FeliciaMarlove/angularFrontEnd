@@ -31,6 +31,7 @@ import {MatButtonModule} from "@angular/material/button";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatCardModule} from "@angular/material/card";
+import { ListeComponent } from './Utilitaires/liste/liste.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import {MatCardModule} from "@angular/material/card";
     MenuAdminComponent,
     ParcoursComponent,
     ParcdefisComponent,
+    ListeComponent,
   ],
   imports: [
     BrowserModule,

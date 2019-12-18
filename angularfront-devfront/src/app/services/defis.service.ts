@@ -1,6 +1,6 @@
 import {EventEmitter, Injectable, Output} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {DefiModel} from "../models/defi-model";
+import {DefiModel} from '../models/defi-model';
 
 const URI = 'http://localhost:8080/api/defis/';
 const httpOptions = {
