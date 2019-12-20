@@ -32,6 +32,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatCardModule} from "@angular/material/card";
 import { ListeComponent } from './Utilitaires/liste/liste.component';
+import {MatTableModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -70,6 +71,7 @@ import { ListeComponent } from './Utilitaires/liste/liste.component';
     ReactiveFormsModule,
     MatCheckboxModule,
     MatCardModule,
+    MatTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

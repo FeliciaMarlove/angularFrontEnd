@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {ParcoursService} from '../../../../../services/parcours.service';
 import {ParcoursModel} from '../../../../../models/parcours-model';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -23,7 +24,9 @@ export class ListeParcoursComponent implements OnInit {
     this.inactiveChecker = false;
     this.parcourss = [];
     this.parcoursService.listActiveParcours().subscribe(
-      data => this.parcourss = data
+      data => {
+        this.parcourss = data;
+      }
     );
   }
 

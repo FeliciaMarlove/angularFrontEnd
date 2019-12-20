@@ -8,6 +8,7 @@
 </form>
 <p *ngIf="hasFailed" style="color: red">Le parcours existe déjà, choisissez un autre nom !</p>
 <br>
+<!--<app-liste></app-liste>-->
 <app-liste-parcours (selectParcours)="getParcoursData($event)"></app-liste-parcours>
 <app-modif-parcours [parc]="toUpParcours"></app-modif-parcours>
 

@@ -2,7 +2,6 @@
 
 <div class="toScrollListes">
   <ul>
-    <!--SELECT DIFF DEFIS !-->
     <li *ngFor="let parcours of parcourss" (click)="select(parcours); parcoursService.select(parcours)">
       {{ parcours.idParcours}} - {{ parcours.nomParcours }} <bdi *ngIf="inactiveChecker">- {{ true == parcours.activeParcours ? 'Actif' : 'Inactif'}}</bdi>
     </li>
