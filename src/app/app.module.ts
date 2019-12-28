@@ -24,15 +24,17 @@ import {RouterModule} from '@angular/router';
 import {AppRoutingModule} from './app-routing.module';
 import {ParcoursComponent} from './modules/elements/components/parcours/parcours/parcours.component';
 import { ParcdefisComponent } from './modules/elements/components/parcours-defis/parcdefis/parcdefis.component';
-import {MatSidenavModule} from "@angular/material/sidenav";
-import {MatFormFieldModule} from "@angular/material/form-field";
-import {HttpClientModule} from "@angular/common/http";
-import {MatButtonModule} from "@angular/material/button";
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {MatCheckboxModule} from "@angular/material/checkbox";
-import {MatCardModule} from "@angular/material/card";
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {HttpClientModule} from '@angular/common/http';
+import {MatButtonModule} from '@angular/material/button';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatCardModule} from '@angular/material/card';
 import { ListeComponent } from './Utilitaires/liste/liste.component';
 import {MatTableModule} from '@angular/material';
+import { MatAutocompleteModule} from '@angular/material';
+import { MatInputModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -72,6 +74,8 @@ import {MatTableModule} from '@angular/material';
     MatCheckboxModule,
     MatCardModule,
     MatTableModule,
+    MatInputModule,
+    MatAutocompleteModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
