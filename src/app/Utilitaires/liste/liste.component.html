@@ -1,0 +1,18 @@
+<p>liste générique</p>
+
+<table>
+  <tr>
+    <!--titres colonnes-->
+    <th *ngFor="let col of columns"> {{ [col] }} </th>
+  </tr>
+  <tr>
+    <!--contenu celulles sur la ligne-->
+    <!-- arr[key] -->
+
+    <!--besoin d'un let qui remplit x Nbre de colonnes à remplir-->
+    <td *ngFor="let x of columns"> {{content[x]}}    </td>
+                                  <!--chelou qui "fonctionne"-->
+                                  <!--{{ content[ ][ ] }}-->
+                                  <!--[indice de la ligne][key]-->
+  </tr>
+</table>

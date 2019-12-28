@@ -1,0 +1,16 @@
+<h4>Créer un compte</h4>
+
+<form [formGroup]="createForm" (ngSubmit)="inscrireUtilisateur()">
+  <input type="text" name="nom" placeholder="Nom" formControlName="nom">
+  <input type="text" name="prenom"  placeholder="Prénom"  formControlName="prenom">
+  <input type="date" name="datenaiss"  placeholder="Date de naissance" formControlName="datenaiss">
+  <input type="email" name="email" placeholder="Adresse e-mail" formControlName="email">
+  <input type="password" name="pw"  placeholder="Mot de passe" formControlName="pw">
+  <br>
+  <button class="btn" *ngIf="createForm.valid">S'inscrire</button>
+</form>
+<br>
+<br>
+<a *ngIf="createFailed" [routerLink]="['/login']">Votre adresse e-mail est déjà enregistrée, veuillez vous connecter en cliquant ici</a>
+
+

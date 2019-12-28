@@ -1,0 +1,30 @@
+<h4>Composition des parcours</h4>
+<div class="parcdefiscont">
+
+  <div class="midlane">
+    <app-liste-parcours></app-liste-parcours>
+    <br>
+  </div>
+
+  <div class="rightside">
+    <br>
+    <b>VOIR COMPOSITION / SUPPRIMER</b>
+    <br>
+    <button *ngIf=" parcoursService.selection" (click)="seeDefisInParcours()">Voir les défis du parcours</button>
+    <ul>
+      <li *ngFor="let defi of defis" (click)="selectDefi(defi)">{{ defi.nomDefi }} {{ defi.descDefi}}</li>
+    </ul>
+    <button *ngIf="parcoursService.selection && defi" (click)="removeDefiFromParcours(defi); defi = null">Retirer le défi <i>{{ defi.idDefi}} {{ defi.nomDefi }}</i> du parcours <i>{{ parcoursService.parcoursId }} {{ parcoursService.selection.nomParcours }}</i></button>
+    <br>
+  </div>
+
+  <div class="below">
+    <br>
+    <b>AJOUTER</b>
+    <br>
+    <button *ngIf="defiService.selection && parcoursService.selection" (click)="addDefiIntoParcours(defiService.selection)">Ajouter le défi dans le parcours</button>
+    <p *ngIf="!success" style="color: red">Le défi est déjà dans ce parcours !</p>
+    <app-liste-defis></app-liste-defis>
+  </div>
+
+</div>

@@ -1,0 +1,15 @@
+<p>Parcours :</p>
+
+<div class="toScrollListes">
+  <ul>
+    <li *ngFor="let parcours of parcourss" (click)="select(parcours); parcoursService.select(parcours)">
+      {{ parcours.idParcours}} - {{ parcours.nomParcours }} <bdi *ngIf="inactiveChecker">- {{ true == parcours.activeParcours ? 'Actif' : 'Inactif'}}</bdi>
+    </li>
+  </ul>
+</div>
+
+<p *ngIf="parcoursService.selection != null"><u>Parcours sélectionné :</u><br> Id : {{ parcoursService.parcoursId}} | nom : {{ parcoursService.selection.nomParcours }} | description : {{ parcoursService.selection.descParcours}} <br> (catégorie {{ parcoursService.selection.categorie.idCategorie }} {{ parcoursService.selection.categorie.nomCategorie }}) </p>
+
+<button mat-fab (click)="getActiveParcours()">Refresh</button>
+
+<br>

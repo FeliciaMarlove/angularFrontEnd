@@ -1,0 +1,12 @@
+<button mat-raised-button (click)="categorieService.setActiveCategorie(categorieService.idCategorie)">Activer</button>
+<button mat-raised-button (click)="categorieService.setInactiveCategorie(categorieService.idCategorie)">Désactiver</button>
+<br>
+<p>Modifier catégorie :</p>
+<p style="color: red" *ngIf="hasFailed">Le nom de catégorie existe déjà</p>
+<p *ngIf="!categorieService.selection">Sélectionnez une catégorie pour la modifier</p>
+<form (ngSubmit)="mettreAJourCategorie();" #catform="ngForm" *ngIf="categorieService.selection">
+  <input type="text" name="nom" [(ngModel)]="nomCat" placeholder="Nom catégorie" required>
+  <input type="text" name="desc" [(ngModel)]="descCat" placeholder="Description catégorie" required>
+  <button mat-raised-button *ngIf="categorieService.selection" >Mettre à jour</button>
+</form>
+

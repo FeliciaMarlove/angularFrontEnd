@@ -1,0 +1,12 @@
+<h4>Démarrer un parcours</h4>
+<app-liste-parcours></app-liste-parcours>
+
+<p *ngIf="isBrianBusy === true" style="color: red">Vous avez déjà un parcours en cours, terminez tous vos défis pour pouvoir démarrer un nouveau parcours !</p>
+
+<br>
+<button (click)="start(userId, parcoursService.parcoursId)">Commencer !</button>
+<br>
+
+<hr>
+
+

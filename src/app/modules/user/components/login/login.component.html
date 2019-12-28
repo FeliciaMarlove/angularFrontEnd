@@ -1,0 +1,15 @@
+<h4>Connexion</h4>
+<div class="loginform">
+  <form (ngSubmit)="loginAttempt()">
+      <input name="mail" [(ngModel)]="email" place placeholder="Adresse e-mail" required>
+    <br>
+      <input name="pwd" type="password" [(ngModel)]="password" placeholder="Mot de passe" required>
+    <br>
+    <button class="btn">Se connecter</button>
+    <p *ngIf="!checkLogins">{{ msg }}</p>
+  </form>
+</div>
+
+<a routerLink="/create" routerLinkActive="active" class="btn">Créer un compte</a>
+
+

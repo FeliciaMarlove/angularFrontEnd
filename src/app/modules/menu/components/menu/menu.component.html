@@ -1,0 +1,7 @@
+<div class="menuleft">
+  <app-menu-user *ngIf="!isAdmin()"></app-menu-user>
+  <app-menu-admin *ngIf="isAdmin()"></app-menu-admin>
+</div>
+
+
+

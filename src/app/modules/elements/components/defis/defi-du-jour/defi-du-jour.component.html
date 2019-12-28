@@ -1,0 +1,17 @@
+<div *ngIf="userRole === 1">
+  <h4>Défi du jour :</h4>
+  <div *ngIf="defi" class="defi">
+    <h4>{{ defi.nomDefi }} </h4> <br> <bdi class="desc">{{ defi.descDefi }}</bdi> <br> <bdi class="long">{{ defi.infobulleDefi }}</bdi>
+  </div>
+  <div *ngIf="!defi">
+    Inscrivez-vous à un parcours pour voir votre premier défi du jour !
+  </div>
+</div>
+
+<div *ngIf="userRole === 2">
+  <h5>Liste Parcours x Utilisateurs :</h5>
+  <ul *ngFor="let x of parcUtilLiaisons">
+    <li> PARCOURS : {{ x.idParcours }} {{ x.nomParcours }} | UTILISATEUR : {{ x.idUtilisateur }} {{ x.email }} | DATE DEBUT : {{ x.dateAchat }} | EN COURS : {{ true == x.ongoing ? 'Oui' : 'Non' }} (taille {{ x.taille}})</li>
+  </ul>
+</div>
+

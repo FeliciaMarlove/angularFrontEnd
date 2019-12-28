@@ -1,0 +1,18 @@
+<p>Défis :</p>
+
+<div class="toScrollListes">
+  <ul>
+    <li *ngFor="let defi of defis" (click)="select(defi); defiService.select(defi)">
+      {{ defi.idDefi }} - {{ defi.nomDefi }} <bdi *ngIf="inactiveChecker">- {{ true === defi.activeDefi ? 'Actif' : 'Inactif' }}</bdi>
+    </li>
+  </ul>
+</div>
+
+<p *ngIf="defiService.selection != null"><u>Défi sélectionné</u> :<br> Id : {{ defiService.selection.idDefi }} | nom : {{ defiService.selection.nomDefi }} | description : {{defiService.selection.descDefi}} | desc. longue : {{ defiService.selection.infobulleDefi }} <br>Catégorie :
+  {{defiService.selection.categorie.idCategorie}} - {{defiService.selection.categorie.nomCategorie}}</p>
+
+<button mat-flat-button (click)="getAllDefis()" *ngIf="!inactiveChecker">Voir tout</button>
+<button mat-flat-button (click)="getDefiActifs()" *ngIf="inactiveChecker">Voir les défis actifs</button>
+<button mat-fab (click)="getAllDefis()" *ngIf="inactiveChecker">Refresh</button>
+<button mat-fab (click)="getDefiActifs()" *ngIf="!inactiveChecker">Refresh</button>
+<br>
