@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'javaangularfront';
+  title = '30 jours pour désencombrer';
 }

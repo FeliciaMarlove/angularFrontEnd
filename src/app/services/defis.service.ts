@@ -53,6 +53,7 @@ export class DefisService {
     defiDto['descDefi'] = defi.descDefi;
     defiDto['infobulleDefi'] = defi.infobulleDefi;
     defiDto['categorieId'] = defi.categorie.idCategorie;
+    defiDto['nomCategorie'] = defi.categorie.nomCategorie;
     // ^ noms attributs du Dto en back
     return this.http.post(URI + 'update/' + idDefi, JSON.stringify(defiDto), httpOptions);
   }
