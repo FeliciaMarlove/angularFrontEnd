@@ -35,6 +35,7 @@ import { ListeComponent } from './Utilitaires/liste/liste.component';
 import {MatTableModule} from '@angular/material';
 import { MatAutocompleteModule} from '@angular/material';
 import { MatInputModule} from '@angular/material';
+import {Ng2CompleterModule} from 'ng2-completer';
 
 @NgModule({
   declarations: [
@@ -76,6 +77,7 @@ import { MatInputModule} from '@angular/material';
     MatTableModule,
     MatInputModule,
     MatAutocompleteModule,
+    Ng2CompleterModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

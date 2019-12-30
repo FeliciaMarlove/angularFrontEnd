@@ -23,6 +23,7 @@
     "@angular/router": "~8.2.9",
     "@material/data-table": "^4.0.0",
     "materialize-css": "^1.0.0-rc.2",
+    "ng2-completer": "^3.0.3",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"

@@ -16,7 +16,7 @@ export class CategorieService {
   @Output() change: EventEmitter<CategorieModel> = new EventEmitter();
 
   constructor(private http: HttpClient) { }
-  listActiveCategories() {
+  listActiveCategories(): any {
     return this.http.get(URI);
   }
   listAllCategories() {

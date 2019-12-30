@@ -3,4 +3,5 @@ export class DefiModel {
   descDefi: string;
   infobulleDefi: string;
   categorieId: number;
+  nomCategorie: string;
 }
