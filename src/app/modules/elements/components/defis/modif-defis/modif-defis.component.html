@@ -8,7 +8,13 @@
   <input type="text" name="nomDef" [(ngModel)]="def.nomDefi" placeholder="Nom défi" required>
   <input type="text" name="descDef" [(ngModel)]="def.descDefi" placeholder="Description défi" required>
   <input type="text" name="infoDef" [(ngModel)]="def.infobulleDefi" placeholder="Infobulle défi" required>
-  <input type="number" name="idCat" [(ngModel)]="def.categorie.idCategorie"  placeholder="Id catégorie" required>
+  <!--<input type="number" name="idCat" [(ngModel)]="def.categorie.idCategorie"  placeholder="Id catégorie" required>-->
+  <ng2-completer name="idCatDefi"
+                 [(ngModel)]="def.categorie.nomCategorie"
+                 [datasource]="dataService"
+                 [minSearchLength]="0"
+                 [openOnClick]="true">
+  </ng2-completer>
   <button mat-raised-button *ngIf="def" >Mettre à jour</button>
 </form>
 

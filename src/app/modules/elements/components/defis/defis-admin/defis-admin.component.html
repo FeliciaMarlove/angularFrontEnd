@@ -4,8 +4,7 @@
   <input type="text" name="descDefi" [(ngModel)]="descDef" placeholder="Description défi" required>
   <input type="text" name="infoDefi" [(ngModel)]="infoDef" placeholder="Infobulle défi" required>
   <!--<input type="number" name="idCatDefi" [(ngModel)]="idCategorie" placeholder="Numéro de catégorie" required>-->
-  Catégorie :
-    <ng2-completer name="idCatDefi"
+    <ng2-completer placeholder="Catégorie" name="idCatDefi"
                    [(ngModel)]="nomCategorie"
                    [datasource]="dataService"
                    [minSearchLength]="0"
@@ -19,5 +18,4 @@
 <br>
 <app-liste-defis (selectDefi)="getDefidata($event)"></app-liste-defis>
 <app-modif-defis [def]="toUpDefi"></app-modif-defis>
-<app-liste-categories></app-liste-categories>
 
